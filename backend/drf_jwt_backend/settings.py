@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
+    'diver.apps.DiverConfig',
+    'dive_site.apps.DiveSiteConfig',
+    'ds_review.apps.DsReviewConfig',
+    'product.apps.ProductConfig',
+    'product_review.apps.ProductReviewConfig',
+    'tip_trick.apps.TipTrickConfig',
     'cars.apps.CarsConfig'  # This app is for example use only
 ]
 
