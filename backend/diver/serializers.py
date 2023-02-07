@@ -4,5 +4,6 @@ from .models import Diver
 class DiverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Diver
-        fields = ['id', 'first_name', 'last_name', 'email', 'city' 'state' 'country' 'cert_agency' 'cert_level']
+        fields = ['id', 'user', 'user_type', 'user_cert_agency', 'user_cert_level']
         depth = 1
+2
