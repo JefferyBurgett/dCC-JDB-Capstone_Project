@@ -10,6 +10,9 @@ const RegisterPage = () => {
     password: "",
     firstName: "",
     lastName: "",
+    city: "",
+    state: "",
+    country: "",
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     defaultValues,
@@ -25,6 +28,15 @@ const RegisterPage = () => {
             type="text"
             name="username"
             value={formData.username}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Email:{" "}
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
             onChange={handleInputChange}
           />
         </label>
@@ -47,11 +59,29 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          Email:{" "}
+          City:{" "}
           <input
             type="text"
-            name="email"
-            value={formData.email}
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          State:{" "}
+          <input
+            type="text"
+            name="state"
+            value={formData.state}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Country:{" "}
+          <input
+            type="text"
+            name="country"
+            value={formData.country}
             onChange={handleInputChange}
           />
         </label>

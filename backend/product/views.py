@@ -9,7 +9,7 @@ from .serializers import ProductSerializer
 # Create your views here.
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_all_products(request):
+def get_all_product(request):
     product = Product.objects.all()
     serializer = ProductSerializer(product, many=True)
     return Response(serializer.data)

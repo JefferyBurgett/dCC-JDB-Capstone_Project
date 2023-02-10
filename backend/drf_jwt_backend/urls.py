@@ -20,4 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('cars.urls')),
+    path('api/diver/', include('diver.urls')),
+    path('api/dive_site/', include('dive_site.urls')),
+    # path('api/ds_review', include('ds_review.urls')),
+    path('api/product/', include('product.urls')),
+    # path('api/product_review', include('product_review.urls')),
 ]
