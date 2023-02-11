@@ -14,7 +14,7 @@ def get_all_product(request):
     serializer = ProductSerializer(product, many=True)
     return Response(serializer.data)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'PUT'])
 @permission_classes([IsAuthenticated])
 def user_product(request):
     print(
@@ -29,3 +29,9 @@ def user_product(request):
         product = Product.objects.filter(user_id=request.user.id)
         serializer = ProductSerializer(product, many=True)
         return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = ProductSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
