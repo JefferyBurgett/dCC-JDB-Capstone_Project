@@ -6,6 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import DiverProfile from "./pages/DiverProfile/DiverProfile";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -23,7 +24,7 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <DiverProfile />
             </PrivateRoute>
           }
         />
