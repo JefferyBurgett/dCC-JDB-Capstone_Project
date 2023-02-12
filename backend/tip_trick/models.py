@@ -1,7 +1,7 @@
 from django.db import models
-from diver.models import Diver
+from authentication.models import User
 
 # Create your models here.
 class Tip_Trick(models.Model):
-    tt_author = models.ForeignKey(Diver, on_delete=models.CASCADE)    
-    tt_text = models.CharField
+    user = models.ForeignKey(User, on_delete=models.CASCADE)    
+    tt_text = models.CharField(max_length=500, default="")

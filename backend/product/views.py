@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -14,7 +14,7 @@ def get_all_product(request):
     serializer = ProductSerializer(product, many=True)
     return Response(serializer.data)
 
-@api_view(['GET', 'POST', 'PUT'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def user_product(request):
     print(
@@ -24,14 +24,30 @@ def user_product(request):
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         product = Product.objects.filter(user_id=request.user.id)
         serializer = ProductSerializer(product, many=True)
         return Response(serializer.data)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
+def user_product_detail(request, pk):
+    print(
+        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    user_product= get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        user_product = get_object_or_404(Product, pk=pk)
+        serializer = ProductSerializer(user_product)
+        return Response(serializer.data)
+
     elif request.method == 'PUT':
-        serializer = ProductSerializer(data=request.data)
-        if serializer.is_valid():
+        serializer = ProductSerializer(user_product, data=request.data)
+        if serializer.is_valid(raise_exception=True):
             serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        user_product_detail.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

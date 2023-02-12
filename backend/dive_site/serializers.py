@@ -4,5 +4,5 @@ from .models import Dive_Site
 class DiveSiteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dive_Site
-        fields = ['user_id', 'site_name', 'city', 'state', 'country']
+        fields = ['user_id', 'site_name', 'site_city', 'site_state', 'site_country']
         depth = 1

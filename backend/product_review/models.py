@@ -1,11 +1,12 @@
 from django.db import models
+from datetime import datetime
 from product.models import Product
-from diver.models import Diver
+from authentication.models import User
 
 
 class Product_Review(models.Model):
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    review_author = models.ForeignKey(Diver, on_delete=models.CASCADE)
-    pd_review_date = models.DateTimeField
-    pd_review_text = models.CharField
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pd_review_date = models.DateTimeField(default=datetime.now())
+    pd_review_text = models.CharField(max_length=500, default="")
 
