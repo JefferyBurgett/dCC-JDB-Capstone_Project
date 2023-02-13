@@ -29,3 +29,10 @@ def user_divers(request):
         divers = Diver.objects.filter(user_id=request.user.id)
         serializer = DiverSerializer(divers, many=True)
         return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def filter_by_country(request,country):
+    divers = Diver.objects.fitler(country=country)
+    serializer = DiverSerializer(divers, many=True)
+    return Response(serializer.data)

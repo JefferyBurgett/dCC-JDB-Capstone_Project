@@ -7,3 +7,4 @@ class Diver(models.Model):
     user_type = models.CharField(max_length=50)
     user_cert_agency = models.CharField(max_length=50)
     user_cert_level = models.CharField(max_length=50)
+    user_availibility = models.BooleanField(default=False)

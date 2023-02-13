@@ -29,12 +29,20 @@ const DiverProfile = () => {
     fetchDiver();
   }, [token]);
   return (
-    <div className="container">
+    <div className="profile-container">
       <h1>Home Page for {user.username}!</h1>
       {diver &&
-        diver.map((user) => (
+        diver.map((element) => (
           <p key={user.id}>
-            {user.first_name} {user.last_name} {user.email} {user.city} {user.state} {user.country} {user.type} {user.cert_agency} {user.cert_level}
+          <p>First Name: {element.user.first_name}</p>
+          <p>Last Name: {element.user.last_name}</p>
+          <p>City: {element.user.city}</p>
+          <p>State: {element.user.state}</p>
+          <p>Country: {element.user.country}</p>
+          <p>Account Type: {element.user_type}</p>      
+          <p>Certifaction Agency: {element.user_cert_agency}</p>
+          <p>Certifaction Level: {element.user_cert_level}</p>
+          <p>Available to Dive: {element.user_availibility}</p>       
           </p>
         ))}
     </div>
