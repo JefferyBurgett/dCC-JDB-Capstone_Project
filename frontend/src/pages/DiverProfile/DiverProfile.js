@@ -10,16 +10,18 @@ const DiverProfile = () => {
   
   const [user, token] = useAuth();
   const [diver, setDiver] = useState([]);
+  
 
   useEffect(() => {
     const fetchDiver = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/auth/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/diver/", {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
         setDiver(response.data);
+        console.log(response.data)
       } catch (error) {
         console.log(error.response.data);
       }
@@ -32,7 +34,7 @@ const DiverProfile = () => {
       {diver &&
         diver.map((user) => (
           <p key={user.id}>
-            {user.first_name} {user.last_name} {user.email} {user.city} {user.state} {user.country}
+            {user.first_name} {user.last_name} {user.email} {user.city} {user.state} {user.country} {user.type} {user.cert_agency} {user.cert_level}
           </p>
         ))}
     </div>

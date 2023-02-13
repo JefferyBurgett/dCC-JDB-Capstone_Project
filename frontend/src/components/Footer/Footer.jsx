@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <p>Copyright © 2022</p>{" "}
+      <p>Jeffery Burgett dCC Capstone Project Copyright © 2023</p>{" "}
     </footer>
   );
 };

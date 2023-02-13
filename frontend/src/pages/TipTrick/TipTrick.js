@@ -4,41 +4,41 @@ import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 
-const Product = () => {
+const TipTrick = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   
   const [user, token] = useAuth();
-  const [products, setProducts] = useState([]);
+  const [tiptricks, setTipTricks] = useState([]);
   
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchTipTricks = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/product/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/tip_trick/", {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
-        setProducts(response.data);
+        setTipTricks(response.data);
         console.log(response.data)
       } catch (error) {
         console.log(error.response.data);
       }
     };
-    fetchProducts();
+    fetchTipTricks();
   }, [token]);
   return (
     <div className="container">
-      <h1>Products</h1>
-      {products &&
-        products.map((product) => (
-          <p key={product.id}>
-            {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
+      <h1>Tips & Tricks</h1>
+      {tiptricks &&
+        tiptricks.map((tip_trick) => (
+          <p key={tip_trick.id}>
+            {tip_trick.tt_text} 
           </p>
         ))}
     </div>
   );
 };
 
-export default Product;
+export default TipTrick;
