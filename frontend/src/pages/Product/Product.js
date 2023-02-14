@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
-const Product = ( {authorized} ) => {
+const Product = () => {
  
   const [user, token] = useAuth();
   const [products, setProducts] = useState([]);
@@ -26,9 +26,7 @@ const Product = ( {authorized} ) => {
     };
     fetchProducts();
   }, [token]);
-  if (!authorized) {
-    return <Navigate to="/login" />
-  }
+  
   return (
     <div className="container">
       <h1>Products</h1>

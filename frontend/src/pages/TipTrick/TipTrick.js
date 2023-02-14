@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
-const TipTrick = ( {authorized} ) => {
+const TipTrick = () => {
     
   const [user, token] = useAuth();
   const [tiptricks, setTipTricks] = useState([]);
@@ -27,9 +27,7 @@ const TipTrick = ( {authorized} ) => {
     };
     fetchTipTricks();
   }, [token]);
-  if (!authorized) {
-    return <Navigate to="/login" />
-  }
+  
   return (
     <div className="container">
       <h1>Tips & Tricks</h1>

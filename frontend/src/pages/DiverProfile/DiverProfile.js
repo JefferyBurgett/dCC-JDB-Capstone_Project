@@ -5,14 +5,16 @@ import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 
-const DiverProfile = ( {authorized} ) => {
+const DiverProfile = () => {
+  
   
   const [user, token] = useAuth();
   const [diver, setDiver] = useState([]);
   
-
+  
   useEffect(() => {
     const fetchDiver = async () => {
+      
       try {
         let response = await axios.get("http://127.0.0.1:8000/api/diver/", {
           headers: {
@@ -27,9 +29,6 @@ const DiverProfile = ( {authorized} ) => {
     };
     fetchDiver();
   }, [token]);
-  if (!authorized) {
-    return <Navigate to="/login" />
-  }
   return (
     <div className="profile-container">
       <h1>Home Page for {user.username}!</h1>

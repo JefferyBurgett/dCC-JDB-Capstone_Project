@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
-const DiveSite = ( {authorized} ) => {
+const DiveSite = () => {
  
   const [user, token] = useAuth();
   const [dive_site, setDive_Site] = useState([]);
@@ -27,9 +27,7 @@ const DiveSite = ( {authorized} ) => {
     };
     fetchDiveSites();
   }, [token]);
-  if (!authorized) {
-    return <Navigate to="/login" />
-  }
+
   return (
     <div className="container">
       <h1>Dive Sites</h1>

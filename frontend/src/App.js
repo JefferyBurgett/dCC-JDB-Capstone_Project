@@ -27,10 +27,10 @@ function App() {
         <Route path="/home" element={<PrivateRoute><DiverProfile /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/diverprofile" element={<DiverProfile />} />
-        <Route path="/divesite" element={<DiveSite />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/tiptrick" element={<TipTrick />} />
+        <Route path="/diverprofile" element={<PrivateRoute><DiverProfile /></PrivateRoute>} />
+        <Route path="/divesite" element={<PrivateRoute><DiveSite /></PrivateRoute>} />
+        <Route path="/product" element={<PrivateRoute><Product /></PrivateRoute>} />
+        <Route path="/tiptrick" element={<PrivateRoute><TipTrick /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>
