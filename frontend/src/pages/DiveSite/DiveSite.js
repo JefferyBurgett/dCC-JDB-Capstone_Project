@@ -1,13 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
-const DiveSite = () => {
-  // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
-  // The "token" value is the JWT token that you will send in the header of any request requiring authentication
-  
+const DiveSite = ( {authorized} ) => {
+ 
   const [user, token] = useAuth();
   const [dive_site, setDive_Site] = useState([]);
   
@@ -28,6 +27,9 @@ const DiveSite = () => {
     };
     fetchDiveSites();
   }, [token]);
+  if (!authorized) {
+    return <Navigate to="/login" />
+  }
   return (
     <div className="container">
       <h1>Dive Sites</h1>

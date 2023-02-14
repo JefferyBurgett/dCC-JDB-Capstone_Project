@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
-const TipTrick = () => {
+const TipTrick = ( {authorized} ) => {
     
   const [user, token] = useAuth();
   const [tiptricks, setTipTricks] = useState([]);
@@ -26,6 +27,9 @@ const TipTrick = () => {
     };
     fetchTipTricks();
   }, [token]);
+  if (!authorized) {
+    return <Navigate to="/login" />
+  }
   return (
     <div className="container">
       <h1>Tips & Tricks</h1>

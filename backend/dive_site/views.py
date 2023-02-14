@@ -28,3 +28,10 @@ def user_dive_sites(request):
         dive_sites = Dive_Site.objects.filter(user_id=request.user.id)
         serializer = DiveSiteSerializer(dive_sites, many=True)
         return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def filter_by_country(request,site_country):
+    dive_site = Dive_Site.objects.filter(site_country=site_country)
+    serializer = DiveSiteSerializer(dive_site, many=True)
+    return Response(serializer.data)

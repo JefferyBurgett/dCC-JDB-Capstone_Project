@@ -1,12 +1,11 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 
-const DiverProfile = () => {
-  // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
-  // The "token" value is the JWT token that you will send in the header of any request requiring authentication
+const DiverProfile = ( {authorized} ) => {
   
   const [user, token] = useAuth();
   const [diver, setDiver] = useState([]);
@@ -28,6 +27,9 @@ const DiverProfile = () => {
     };
     fetchDiver();
   }, [token]);
+  if (!authorized) {
+    return <Navigate to="/login" />
+  }
   return (
     <div className="profile-container">
       <h1>Home Page for {user.username}!</h1>
@@ -36,8 +38,8 @@ const DiverProfile = () => {
           <p key={user.id}>
           <p>First Name: {element.user.first_name}</p>
           <p>Last Name: {element.user.last_name}</p>
-          <p>City: {element.user.city}</p>
-          <p>State: {element.user.state}</p>
+          <p>City: {element.user_city}</p>
+          <p>State: {element.user_state}</p>
           <p>Country: {element.user.country}</p>
           <p>Account Type: {element.user_type}</p>      
           <p>Certifaction Agency: {element.user_cert_agency}</p>

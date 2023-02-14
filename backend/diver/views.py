@@ -32,7 +32,7 @@ def user_divers(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def filter_by_country(request,country):
-    divers = Diver.objects.fitler(country=country)
+def filter_by_country(request,user_country):
+    divers = Diver.objects.filter(user_country=user_country)
     serializer = DiverSerializer(divers, many=True)
     return Response(serializer.data)
