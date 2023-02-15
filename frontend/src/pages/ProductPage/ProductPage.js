@@ -6,7 +6,7 @@ import axios from "axios";
 import Products from "../../components/Products/Products";
 
 
-const Product = () => {
+const ProductPage = () => {
  
   const [user, token] = useAuth();
   const [products, setProducts] = useState([]);
@@ -36,4 +36,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage;

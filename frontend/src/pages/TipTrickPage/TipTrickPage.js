@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
-const TipTrick = () => {
+const TipTrickPage = () => {
     
   const [user, token] = useAuth();
   const [tiptricks, setTipTricks] = useState([]);
@@ -41,4 +41,4 @@ const TipTrick = () => {
   );
 };
 
-export default TipTrick;
+export default TipTrickPage;

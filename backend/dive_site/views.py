@@ -25,13 +25,13 @@ def user_dive_sites(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        dive_sites = Dive_Site.objects.filter(user_id=request.user.id)
+        dive_sites = Dive_Site.objects.all()
         serializer = DiveSiteSerializer(dive_sites, many=True)
         return Response(serializer.data)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def filter_by_country(request,site_country):
-    dive_site = Dive_Site.objects.filter(site_country=site_country)
+def filter_by_id(request,id):
+    dive_site = Dive_Site.objects.filter(id=id)
     serializer = DiveSiteSerializer(dive_site, many=True)
     return Response(serializer.data)

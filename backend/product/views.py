@@ -27,7 +27,7 @@ def user_product(request):
     
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        product = Product.objects.filter(user_id=request.user.id)
+        product = Product.objects.all()
         serializer = ProductSerializer(product, many=True)
         return Response(serializer.data)
 

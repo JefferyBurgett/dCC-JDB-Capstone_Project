@@ -6,10 +6,11 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import DiverProfile from "./pages/DiverProfile/DiverProfile";
-import DiveSite from "./pages/DiveSite/DiveSite";
-import Product from "./pages/Product/Product";
-import TipTrick from "./pages/TipTrick/TipTrick";
+import DiverProfilePage from "./pages/DiverProfilePage/DiverProfilePage";
+import DiveSitePage from "./pages/DiveSitePage/DiveSitePage";
+import DiveSiteDetailPage from "./pages/DiveSiteDetailPage/DiveSiteDetailPage";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import TipTrickPage from "./pages/TipTrickPage/TipTrickPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -24,12 +25,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/home" element={<PrivateRoute><DiverProfile /></PrivateRoute>}/>
+        <Route path="/home" element={<PrivateRoute><DiverProfilePage /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/divesite" element={<PrivateRoute><DiveSite /></PrivateRoute>} />
-        <Route path="/product" element={<PrivateRoute><Product /></PrivateRoute>} />
-        <Route path="/tiptrick" element={<PrivateRoute><TipTrick /></PrivateRoute>} />
+        <Route path="/divesite" element={<PrivateRoute><DiveSitePage /></PrivateRoute>} />
+        <Route path="/details/:id" element={<PrivateRoute><DiveSiteDetailPage /></PrivateRoute>} />
+        <Route path="/product" element={<PrivateRoute><ProductPage /></PrivateRoute>} />
+        <Route path="/tiptrick" element={<PrivateRoute><TipTrickPage /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>

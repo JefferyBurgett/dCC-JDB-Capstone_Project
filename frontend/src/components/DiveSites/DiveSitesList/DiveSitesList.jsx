@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 const DiveSitesList = (props) => {
@@ -29,11 +29,11 @@ const DiveSitesList = (props) => {
         <div className="container">
         <h1>Dive Sites</h1>
         {dive_sites &&
-        dive_sites.map((dive_site) => (
-            <p key={dive_site.id}>
-            {dive_site.site_name},  {dive_site.site_city},  {dive_site.site_state},  {dive_site.site_country} 
-            </p>
-        ))}
+        dive_sites.map((dive_site) => {
+            return <Link to={`/details/${dive_site.id}`} key={dive_site.id}>
+            {dive_site.site_name}, {dive_site.site_city}, {dive_site.site_state}, {dive_site.site_country} 
+            </Link>;
+        })}
     </div>
     );
 };

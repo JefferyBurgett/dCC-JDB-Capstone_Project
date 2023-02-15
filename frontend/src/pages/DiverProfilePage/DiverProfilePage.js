@@ -6,7 +6,7 @@ import DiverProfiles from "../../components/DiverProfiles/DiverProfiles";
 
 import axios from "axios";
 
-const DiverProfile = () => {
+const DiverProfilePage = () => {
   
   const [user, token] = useAuth();
   const [diver, setDiver] = useState([]);
@@ -36,4 +36,4 @@ const DiverProfile = () => {
   );
 };
 
-export default DiverProfile;
+export default DiverProfilePage;
