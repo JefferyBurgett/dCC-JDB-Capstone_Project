@@ -1,12 +1,12 @@
 import React, { useState} from "react";
 import { useParams } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
-import "./CreateProfile.css"
+import "./ProfileForm.css"
 
 
 
-const CreateProfile = (props) => {
+const ProfileForm = (props) => {
     const [user, token] = useAuth();
     const [user_city, setUser_City] = useState("");
     const [user_state, setUser_State] = useState("");
@@ -33,7 +33,7 @@ const CreateProfile = (props) => {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.setCreateProfile(true);
+            props.setDiver(true);
             setUser_City("");
             setUser_State("");
             setUser_Country("");
@@ -130,4 +130,4 @@ const CreateProfile = (props) => {
   );
 };
 
-export default CreateProfile;
+export default ProfileForm;

@@ -1,5 +1,5 @@
-import ProductForm from "./ProductsForm";
-import ProductsList from "./ProductsList";
+import ProductForm from "./ProductForm/ProductsForm";
+import ProductsList from "./ProductsList/ProductsList";
 import { useState } from "react";
 
 const Products = (props) => {

@@ -1,38 +1,38 @@
 import React, { useState} from "react";
 import { useParams } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 
 
 
-const ProductForm = (props) => {
+const DiveSitesForm = (props) => {
 
     const [user, token] = useAuth();
-    const [product_brand, setProduct_Brand] = useState();
-    const [product_name, setProduct_Name] = useState();
-    const [product_type, setProduct_Type] = useState();
-    const [product_price, setProduct_Price] = useState();
+    const [site_name, setSite_Name] = useState();
+    const [site_city, setSite_City] = useState();
+    const [site_state, setSite_State] = useState();
+    const [site_country, setSite_Country] = useState();
            
     
     async function handleSubmit(event) {
         try { 
             event.preventDefault();
-            let newProduct = {
-            product_brand: product_brand,
-            product_name: product_name,
-            product_type: product_type,
-            product_price: product_price,
+            let newDiveSite = {
+            site_name: site_name,
+            site_city: site_city,
+            site_state: site_state,
+            site_country: site_country,
             };
-            await axios.post("http://127.0.0.1:8000/api/product/", newProduct, {
+            await axios.post("http://127.0.0.1:8000/api/dive_site/", newDiveSite, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.setProducts(true);
-            setProduct_Brand("");
-            setProduct_Name("");
-            setProduct_Type("");
-            setProduct_Price();
+            props.setDive_Sites(true);
+            setSite_Name("");
+            setSite_City("");
+            setSite_State("");
+            setSite_Country();
             } catch (error) {
               console.log(error.message);
             }
@@ -44,44 +44,45 @@ const ProductForm = (props) => {
       <form className='createForm' onSubmit={handleSubmit}>
         <div className="row">
           <div className="col">
+            <label>Add Dive Site</label>
             <div>
-              <label>Product Brand</label>
+              <label>Dive Site Name</label>
               <input
                 type="text"
                 className="form-control"
-                value={product_brand}
-                onChange={(event) => setProduct_Brand(event.target.value)}
+                value={site_name}
+                onChange={(event) => setSite_Name(event.target.value)}
               />
             </div>
          </div>
 
             <div className="col">
-              <label>Product Name</label>
+              <label>Dive Site City</label>
               <input
                 type="text"
                 className="form-control"
-                value={product_name}
-                onChange={(event) => setProduct_Name(event.target.value)}
+                value={site_city}
+                onChange={(event) => setSite_City(event.target.value)}
               />
             </div>
 
             <div className="col">
-              <label>Product Type</label>
+              <label>Dive Site State</label>
               <input
                 type="text"
                 className="form-control"
-                value={product_type}
-                onChange={(event) => setProduct_Type(event.target.value)}
+                value={site_state}
+                onChange={(event) => setSite_State(event.target.value)}
               />
             </div>
 
             <div className="col">
-              <label>Product Price</label>
+              <label>Dive Site Country</label>
               <input
                 type="text"
                 className="form-control"
-                value={product_price}
-                onChange={(event) => setProduct_Price(event.target.value)}
+                value={site_country}
+                onChange={(event) => setSite_Country(event.target.value)}
               />
             </div>
             <div>
@@ -95,4 +96,4 @@ const ProductForm = (props) => {
   );
 };
 
-export default ProductForm;
+export default DiveSitesForm;

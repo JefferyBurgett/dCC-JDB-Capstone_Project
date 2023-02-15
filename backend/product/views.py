@@ -39,7 +39,7 @@ def user_product_detail(request, pk):
     user_product= get_object_or_404(Product, id=pk)
     if request.method == 'GET':
         user_product = get_object_or_404(Product, pk=pk)
-        serializer = ProductSerializer(user_product)
+        serializer = ProductSerializer(user_product, many=True)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
