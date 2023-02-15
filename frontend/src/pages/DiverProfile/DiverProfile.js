@@ -1,7 +1,8 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import CreateProfile from "../../components/CreateProfile/CreateProfile";
 
 import axios from "axios";
 
@@ -31,6 +32,7 @@ const DiverProfile = () => {
   }, [token]);
   return (
     <div className="profile-container">
+      <CreateProfile>Update Profile</CreateProfile>
       <h1>Home Page for {user.username}!</h1>
       {diver &&
         diver.map((element) => (

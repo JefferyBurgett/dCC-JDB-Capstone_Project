@@ -16,7 +16,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to='/diverprofile/'>Diver Profile</Link>
+          <Link to='/home/'>Diver Profile</Link>
         </li>
         <li>
           <Link to='/divesite/'>Dive Sites</Link>
