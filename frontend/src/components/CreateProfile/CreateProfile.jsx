@@ -110,6 +110,15 @@ const CreateProfile = (props) => {
                 onChange={(event) => setUser_Cert_Level(event.target.value)}
                 />
             </div>
+            <div className="col">
+              <label>Availibility</label>
+              <input
+                type="text"
+                className="form-control"
+                value={user_availibility}
+                onChange={(event) => setUser_Availibility(event.target.value)}
+                />
+            </div>
              <div className='col'>
                 <button>Submit</button>
              </div>   

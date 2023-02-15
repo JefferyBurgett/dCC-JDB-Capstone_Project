@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Products from "../../components/Products/Products";
+
 
 const Product = () => {
  
@@ -28,15 +30,20 @@ const Product = () => {
   }, [token]);
   
   return (
-    <div className="container">
-      <h1>Products</h1>
-      {products &&
-        products.map((product) => (
-          <p key={product.id}>
-            {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
-          </p>
-        ))}
+    <div>
+        <Products setProducts={setProducts} />
     </div>
+
+    // <div className="container">
+      
+    //   <h1>Products</h1>
+    //   {products &&
+    //     products.map((product) => (
+    //       <p key={product.id}>
+    //         {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
+    //       </p>
+    //     ))}
+    // </div>
   );
 };
 
