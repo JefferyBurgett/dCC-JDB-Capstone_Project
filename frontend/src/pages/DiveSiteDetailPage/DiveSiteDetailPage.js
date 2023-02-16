@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 
@@ -12,7 +12,7 @@ const DiveSiteDetailPage = () => {
         useEffect(() => {
             const fetchDive_Site = async () => {
               try {
-                let response = await axios.get(`http://127.0.0.1:8000/api/dive_site/`, {
+                let response = await axios.get(`http://127.0.0.1:8000/api/dive_site/${id}`, {
                   headers: {
                     Authorization: "Bearer " + token,
                   },
@@ -20,11 +20,14 @@ const DiveSiteDetailPage = () => {
                 setDive_Site(response.data);
                 console.log(response.data)
               } catch (error) {
-                console.log(error.response.data);
+                console.log(error);
               }
             };
             fetchDive_Site();
           }, [id],[token]);
+
+
+
 
     return (
         <div>
