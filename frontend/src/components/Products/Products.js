@@ -1,4 +1,4 @@
-import ProductForm from "./ProductForm/ProductsForm";
+import ProductModal from "../ProductModal/ProductModal";
 import ProductsList from "./ProductsList/ProductsList";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ const Products = (props) => {
 
     return (
         <div>
-          <ProductForm setProducts={setProducts} />
+          <ProductModal setProducts={setProducts} />
           <ProductsList products={products} setProducts={setProducts} />
         </div>
       );

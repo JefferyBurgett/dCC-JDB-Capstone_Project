@@ -1,9 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { Navigate } from "react-router-dom";
-import axios from "axios";
 import Products from "../../components/Products/Products";
+
 
 
 const ProductPage = () => {
@@ -31,6 +30,7 @@ const ProductPage = () => {
   
   return (
     <div>
+        
         <Products setProducts={setProducts} />
     </div>
   );

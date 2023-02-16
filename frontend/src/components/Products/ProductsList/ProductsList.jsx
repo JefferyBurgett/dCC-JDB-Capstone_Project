@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 const ProductList = (props) => {
@@ -30,9 +30,15 @@ const ProductList = (props) => {
           <h1>Products</h1>
           {products &&
             products.map((product) => (
-              <p key={product.id}>
-                {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
-              </p>
+              <li key={product.id}>
+              <Link to={`/product/${product.id}`}>
+                {product.product_name} 
+              </Link>
+            </li>
+
+              // <p key={product.id}>
+              //   {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
+              // </p>
             ))}
         </div>
       );

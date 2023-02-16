@@ -1,5 +1,5 @@
 // General Imports
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Pages Imports
@@ -10,6 +10,7 @@ import DiverProfilePage from "./pages/DiverProfilePage/DiverProfilePage";
 import DiveSitePage from "./pages/DiveSitePage/DiveSitePage";
 import DiveSiteDetailPage from "./pages/DiveSiteDetailPage/DiveSiteDetailPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import TipTrickPage from "./pages/TipTrickPage/TipTrickPage";
 
 // Component Imports
@@ -29,8 +30,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/divesite" element={<PrivateRoute><DiveSitePage /></PrivateRoute>} />
-        <Route path="/details/:id" element={<PrivateRoute><DiveSiteDetailPage /></PrivateRoute>} />
+        <Route path="/divesite/:id" element={<PrivateRoute><DiveSiteDetailPage /></PrivateRoute>} />
         <Route path="/product" element={<PrivateRoute><ProductPage /></PrivateRoute>} />
+        <Route path="/product/:id" element={<PrivateRoute><ProductDetailPage /></PrivateRoute>} />
         <Route path="/tiptrick" element={<PrivateRoute><TipTrickPage /></PrivateRoute>} />
       </Routes>
       <Footer />
