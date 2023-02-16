@@ -32,7 +32,7 @@ const DiveSiteDetailPage = () => {
     return (
         <div>
             <h1>Dive Site Details {id}</h1>
-            <h1>Dive Site Name: {dive_site.name}</h1>
+            <h1>Dive Site Name: {dive_site.site_name}</h1>
         </div>
     );
 };
