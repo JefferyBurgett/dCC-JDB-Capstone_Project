@@ -1,4 +1,4 @@
-import ProductModal from "../ProductModal/ProductModal";
+import ProductModal from "./ProductModal/ProductModal";
 import ProductsList from "./ProductsList/ProductsList";
 import { useState } from "react";
 

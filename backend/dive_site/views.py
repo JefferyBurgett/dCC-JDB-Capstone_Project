@@ -31,7 +31,7 @@ def user_dive_sites(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def filter_by_id(request,id):
+def filter_by_id(request, id):
     dive_site = Dive_Site.objects.filter(id=id)
     serializer = DiveSiteSerializer(dive_site, many=True)
     return Response(serializer.data)

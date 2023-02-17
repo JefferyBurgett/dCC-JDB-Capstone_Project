@@ -19,10 +19,13 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import { useEffect } from "react";
 
 function App() {
+
+
   return (
-    <div>
+    <div> 
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
@@ -30,9 +33,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/divesite" element={<PrivateRoute><DiveSitePage /></PrivateRoute>} />
-        <Route path="/divesite/:id" element={<PrivateRoute><DiveSiteDetailPage /></PrivateRoute>} />
+        <Route path="/ds_detail/:siteId" element={<PrivateRoute><DiveSiteDetailPage /></PrivateRoute>} />
         <Route path="/product" element={<PrivateRoute><ProductPage /></PrivateRoute>} />
-        <Route path="/product/:id" element={<PrivateRoute><ProductDetailPage /></PrivateRoute>} />
+        <Route path="/product_detail/:productId" element={<PrivateRoute><ProductDetailPage /></PrivateRoute>} />
         <Route path="/tiptrick" element={<PrivateRoute><TipTrickPage /></PrivateRoute>} />
       </Routes>
       <Footer />

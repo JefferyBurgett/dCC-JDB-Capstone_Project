@@ -27,7 +27,7 @@ const DiverProfile = (props) => {
 
   return (
     <div className="profile-container">
-    <h1>Home Page for {user.username}!</h1>
+    <h1>{user.username}!</h1>
     {diver &&
       diver.map((element) => (
         <p key={user.id}>

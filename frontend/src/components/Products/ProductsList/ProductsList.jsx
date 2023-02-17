@@ -31,8 +31,8 @@ const ProductList = (props) => {
           {products &&
             products.map((product) => (
               <li key={product.id}>
-              <Link to={`/product/${product.id}`}>
-                {product.product_name} 
+              <Link to={`/product_detail/${product.id}`}>
+              {`${product.product_brand} ${product.product_name}`}
               </Link>
             </li>
 

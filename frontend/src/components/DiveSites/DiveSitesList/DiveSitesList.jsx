@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const DiveSitesList = (props) => {
   const [dive_sites, setDive_Sites] = useState([]);
   const [user, token] = useAuth();
+  
 
   useEffect(() => {
     const fetchDive_Sites = async () => {
@@ -25,7 +26,8 @@ const DiveSitesList = (props) => {
     fetchDive_Sites();
   }, [token]);
   
-
+  
+  
   return (
      <div className="container">
       <h1>Dive Sites</h1>
@@ -33,9 +35,8 @@ const DiveSitesList = (props) => {
         dive_sites.map((dive_site) => {
           return (
             <li key={dive_site.id}>
-              <Link to={`/divesite/${dive_site.id}`}>
-                {dive_site.site_name} 
-              </Link>
+              <Link to={`/ds_detail/${dive_site.id}`}>
+                {`${dive_site.site_name} ${dive_site.site_country}`}</Link>
             </li>
           );
         })}
