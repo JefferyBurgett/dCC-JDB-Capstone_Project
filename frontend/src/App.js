@@ -6,6 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import DiversListPage from "./pages/DiversListPage/DiversListPage";
 import DiverProfilePage from "./pages/DiverProfilePage/DiverProfilePage";
 import DiveSitePage from "./pages/DiveSitePage/DiveSitePage";
 import DiveSiteDetailPage from "./pages/DiveSiteDetailPage/DiveSiteDetailPage";
@@ -21,6 +22,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import { useEffect } from "react";
 
+
 function App() {
 
 
@@ -29,6 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
+        <Route path="/diverslist" element={<PrivateRoute><DiversListPage /></PrivateRoute>} />
         <Route path="/home" element={<PrivateRoute><DiverProfilePage /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />

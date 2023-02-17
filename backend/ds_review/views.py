@@ -29,3 +29,17 @@ def user_ds_review(request):
         ds_review = DS_Review.objects.filter(user_id=request.user.id)
         serializer = DS_ReviewSerializer(ds_review, many=True)
         return Response(serializer.data)
+    
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_review_by_site_name(request, site_name):
+    ds_review = DS_Review.objects.filter(site_name=site_name)
+    serializer = DS_ReviewSerializer(ds_review, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_review_by_site_id(request, site_id):
+    ds_review = DS_Review.objects.filter(site_id=site_id)
+    serializer = DS_ReviewSerializer(ds_review, many=True)
+    return Response(serializer.data)

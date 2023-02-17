@@ -15,6 +15,7 @@ const Navbar = () => {
             <b>DiverConnect</b>
           </Link>
         </li>
+        <Link to='/diverslist/'>Divers Directory</Link>
         <li>
           <Link to='/home/'>Diver Profile</Link>
         </li>

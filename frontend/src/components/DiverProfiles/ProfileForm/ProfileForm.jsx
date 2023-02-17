@@ -101,6 +101,7 @@ const ProfileForm = (props) => {
                 onChange={(event) => setUser_Cert_Agency(event.target.value)}
               />
             </div>
+
             <div className="col">
               <label>Certification Level</label>
               <input
@@ -110,6 +111,7 @@ const ProfileForm = (props) => {
                 onChange={(event) => setUser_Cert_Level(event.target.value)}
                 />
             </div>
+
             <div className="col">
               <label>Availibility</label>
               <input
@@ -119,6 +121,7 @@ const ProfileForm = (props) => {
                 onChange={(event) => setUser_Availibility(event.target.value)}
                 />
             </div>
+            
              <div className='col'>
                 <button>Submit</button>
              </div>   

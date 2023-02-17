@@ -24,19 +24,19 @@ const ProductModal = (props) => {
     const [product_type, setProduct_Type] = useState();
     const [product_price, setProduct_Price] = useState();
            
-    useEffect(() => {
-      getAllProducts();
-    }, []);
+    // useEffect(() => {
+    //   getAllProducts();
+    // }, []);
 
-    async function getAllProducts() {
-      const response = await axios.get("http://127.0.0.1:8000/api/product/", {
-        headers: {
-            Authorization: 'Bearer ' + token,
-        },
-    });
-      console.log(response.data);
+    // async function getAllProducts() {
+    //   const response = await axios.get("http://127.0.0.1:8000/api/product/", {
+    //     headers: {
+    //         Authorization: 'Bearer ' + token,
+    //     },
+    // });
+    //   console.log(response.data);
       
-    }
+    // }
 
     async function handleSubmit(event) {
         try { 
@@ -52,13 +52,12 @@ const ProductModal = (props) => {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.setProducts(true);
             setProduct_Brand("");
             setProduct_Name("");
             setProduct_Type("");
             setProduct_Price("");
             hideModal();
-            getAllProducts();
+            props.getAllProducts();
           } catch (error) {
             console.log(error.message);
           }

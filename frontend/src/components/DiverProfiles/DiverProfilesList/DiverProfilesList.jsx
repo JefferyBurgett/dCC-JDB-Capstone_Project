@@ -35,11 +35,11 @@ const DiverProfile = (props) => {
         <p>Last Name: {element.user.last_name}</p>
         <p>City: {element.user_city}</p>
         <p>State: {element.user_state}</p>
-        <p>Country: {element.user.country}</p>
+        <p>Country: {element.user_country}</p>
         <p>Account Type: {element.user_type}</p>      
         <p>Certifaction Agency: {element.user_cert_agency}</p>
         <p>Certifaction Level: {element.user_cert_level}</p>
-        <p>Available to Dive: {element.user_availibility}</p>       
+        <p>Available to Dive: {element.user_availibility ? "Available" : "Not Availalbe"}</p>       
         </p>
       ))}
   </div>

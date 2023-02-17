@@ -36,7 +36,7 @@ const DiveSitesList = (props) => {
           return (
             <li key={dive_site.id}>
               <Link to={`/ds_detail/${dive_site.id}`}>
-                {`${dive_site.site_name} ${dive_site.site_country}`}</Link>
+                {`${dive_site.site_name}, ${dive_site.site_country}`}</Link>
             </li>
           );
         })}
