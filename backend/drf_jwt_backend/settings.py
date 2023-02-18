@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'product_review.apps.ProductReviewConfig',
     'tip_trick.apps.TipTrickConfig',
-    'cars.apps.CarsConfig'  # This app is for example use only
 ]
 
 MIDDLEWARE = [

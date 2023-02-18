@@ -5,41 +5,21 @@ import { Link } from "react-router-dom";
 
 
 const DiveSitesList = (props) => {
-  const [dive_sites, setDive_Sites] = useState([]);
   const [user, token] = useAuth();
-  
 
-  useEffect(() => {
-    const fetchDive_Sites = async () => {
-      try {
-        let response = await axios.get("http://127.0.0.1:8000/api/dive_site/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        setDive_Sites(response.data);
-        console.log(response.data)
-      } catch (error) {
-        console.log(error.response.data);
-      }
-    };
-    fetchDive_Sites();
-  }, [token]);
-  
   
   
   return (
      <div className="container">
       <h1>Dive Sites</h1>
-        {dive_sites &&
-        dive_sites.map((dive_site) => {
-          return (
+        {props.dive_sites &&
+        props.dive_sites.map((dive_site) => (          
             <li key={dive_site.id}>
               <Link to={`/ds_detail/${dive_site.id}`}>
-                {`${dive_site.site_name}, ${dive_site.site_country}`}</Link>
+                {`${dive_site.site_name}, ${dive_site.site_country}`}
+                </Link>
             </li>
-          );
-        })}
+        ))}
     </div>
     );
 };

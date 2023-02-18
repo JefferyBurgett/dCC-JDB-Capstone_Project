@@ -1,14 +1,34 @@
 import DiveSiteModal from "./DiveSiteModal/DiveSiteModal";
 import DiveSitesList from "./DiveSitesList/DiveSitesList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import useAuth from "../../hooks/useAuth";
 
 const DiveSites = (props) => {
-    const [dive_site, setDive_Site] = useState();
+    const [user, token] = useAuth();
+    const [dive_sites, setDive_Sites] = useState();
+    useEffect(() => {
+      
+      fetchDive_Sites();
+    }, [token]);
+    const fetchDive_Sites = async () => {
+      try {
+        let response = await axios.get("http://127.0.0.1:8000/api/dive_site/", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+        setDive_Sites(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.log(error.response.data);
+      }
+    };
 
     return (
         <div>
-          <DiveSiteModal setDive_Site={setDive_Site} />
-          <DiveSitesList dive_site={dive_site} setDive_Site={setDive_Site} />
+          <DiveSiteModal getAllDiveSites={fetchDive_Sites} />
+          <DiveSitesList dive_sites={dive_sites} setDive_Sites={setDive_Sites} />
         </div>
       );
     };

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+
 
 const DiveSiteModal = (props) => {
 
@@ -17,6 +16,7 @@ const DiveSiteModal = (props) => {
     const hideModal = () => {
       setIsOpen(false);
     };
+
     const [user, token] = useAuth();
     const [site_name, setSite_Name] = useState();
     const [site_city, setSite_City] = useState();
@@ -38,11 +38,12 @@ const DiveSiteModal = (props) => {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.setDive_Site(true);
             setSite_Name("");
             setSite_City("");
             setSite_State("");
-            setSite_Country();
+            setSite_Country("");
+            hideModal();
+            props.getAllDiveSites();
             } catch (error) {
               console.log(error.message);
             }
@@ -54,7 +55,7 @@ const DiveSiteModal = (props) => {
     <button onClick={showModal}>Add Dive Site</button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>
-            <Modal.Title>Add New Product</Modal.Title>
+            <Modal.Title>Add Dive Site</Modal.Title>
           </Modal.Header>
           <Modal.Body>
                 <form className='createForm'>

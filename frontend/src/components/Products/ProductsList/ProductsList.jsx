@@ -20,10 +20,6 @@ const ProductList = (props) => {
               {`${product.product_brand} ${product.product_name}`}
               </Link>
             </li>
-
-              // <p key={product.id}>
-              //   {product.product_brand} {product.product_name} {product.product_type} {product.product_price}
-              // </p>
             ))}
         </div>
       );

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+
 
 const ProductModal = (props) => {
 
@@ -23,20 +22,7 @@ const ProductModal = (props) => {
     const [product_name, setProduct_Name] = useState();
     const [product_type, setProduct_Type] = useState();
     const [product_price, setProduct_Price] = useState();
-           
-    // useEffect(() => {
-    //   getAllProducts();
-    // }, []);
-
-    // async function getAllProducts() {
-    //   const response = await axios.get("http://127.0.0.1:8000/api/product/", {
-    //     headers: {
-    //         Authorization: 'Bearer ' + token,
-    //     },
-    // });
-    //   console.log(response.data);
-      
-    // }
+    
 
     async function handleSubmit(event) {
         try { 
