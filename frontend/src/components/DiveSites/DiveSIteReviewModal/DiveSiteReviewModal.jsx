@@ -34,6 +34,7 @@ const DiveSiteReviewModal = (props) => {
                     Authorization: 'Bearer ' + token,
                 },
             });
+            props.DS_reviews(true);
             setReview_Text("");
             hideModal();
             props.getDSReviews();

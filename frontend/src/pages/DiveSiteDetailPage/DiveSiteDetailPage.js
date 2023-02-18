@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import DiveSiteReviewModal from "../../components/DiveSites/DiveSIteReviewModal/DiveSiteReviewModal";
 import DiveSiteReviewList from "../../components/DiveSites/DiveSiteReviews/DiveSiteReviewList";
+import GoogleDSMap from "../../components/GoogleMap/GoogleMap";
 
 const DiveSiteDetailPage = () => {
     const {siteId} = useParams();
