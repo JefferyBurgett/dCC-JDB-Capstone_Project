@@ -8,4 +8,6 @@ class Dive_Site(models.Model):
     site_city = models.CharField(max_length=50)
     site_state = models.CharField(max_length=50, blank= True)
     site_country = models.CharField(max_length=50)
+    site_lat = models.FloatField(max_length=7, default=00.00000)
+    site_lng = models.FloatField(max_length=7, default=-00.00000)
     

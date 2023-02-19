@@ -22,6 +22,8 @@ const DiveSiteModal = (props) => {
     const [site_city, setSite_City] = useState();
     const [site_state, setSite_State] = useState();
     const [site_country, setSite_Country] = useState();
+    const [site_lat, setSite_Lat] = useState();
+    const [site_lng, setSite_Lng] = useState();
            
     
     async function handleSubmit(event) {
@@ -32,6 +34,8 @@ const DiveSiteModal = (props) => {
             site_city: site_city,
             site_state: site_state,
             site_country: site_country,
+            site_lat: site_lat,
+            site_lng: site_lng
             };
             await axios.post("http://127.0.0.1:8000/api/dive_site/", newDiveSite, {
                 headers: {
@@ -42,6 +46,8 @@ const DiveSiteModal = (props) => {
             setSite_City("");
             setSite_State("");
             setSite_Country("");
+            setSite_Lat("");
+            setSite_Lng("");
             hideModal();
             props.getAllDiveSites();
             } catch (error) {
@@ -101,7 +107,27 @@ const DiveSiteModal = (props) => {
                             value={site_country}
                             onChange={(event) => setSite_Country(event.target.value)}
                         />
-                        </div>  
+                        </div>
+
+                        <div className="col">
+                        <label>Dive Site Latitude</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={site_lat}
+                            onChange={(event) => setSite_Lat(event.target.value)}                            
+                        />
+                        </div>
+
+                        <div className="col">
+                        <label>Dive Site Longitude</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={site_lng}
+                            onChange={(event) => setSite_Lng(event.target.value)}                            
+                        />
+                        </div>   
                     </div>
                 </form>
             </Modal.Body>

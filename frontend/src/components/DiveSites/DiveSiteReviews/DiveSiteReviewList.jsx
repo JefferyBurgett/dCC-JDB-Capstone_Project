@@ -25,30 +25,7 @@ const DiveSiteReviewList = (props) => {
             console.log(error.response.data);
         } 
       };
-    
-
-//   return (
-//     <div>
-//       <p className="comment-list">Comments List: </p>
-//       <div className="commentlist">
-//         {ds_reviews.map(function (ds_review, index) {
-//           return (
-//             <div key={index} className="singlecomment">
-//               <p>
-//                 Userame: <span>{ds_review.user.username}</span>
-             
-      
-              
-//                   <p>{ds_review.review_text}</p>
-//                 </div>
-//                </div>
-//             </div>
-//           );
-//         })}
-//     </div>
-  
-//   );
-// };
+ 
 return (
   <div className="container">
    <h1>Reviews</h1>

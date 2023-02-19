@@ -27,7 +27,7 @@ def user_divers(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        divers = Diver.objects.filter(user_id=request.user.id)
+        divers = Diver.objects.all()
         serializer = DiverSerializer(divers, many=True)
         return Response(serializer.data)
     
@@ -43,6 +43,12 @@ def divers_detail(request, pk):
             serializer.save()
             return Response(serializer.data)
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def filter_by_id(request,id):
+    divers = get_object_or_404(Diver, pk=id)
+    serializer = DiverSerializer(divers, many=True)
+    return Response(serializer.data)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

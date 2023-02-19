@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 
-const DiverProfile = (props) => {
+const DiverProfileList = (props) => {
   const [diver, setDiver] = useState([]);
   const [user, token] = useAuth();
   useEffect(() => {
@@ -46,4 +45,4 @@ const DiverProfile = (props) => {
       );
 };
 
-export default DiverProfile;
+export default DiverProfileList;

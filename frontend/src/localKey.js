@@ -1,1 +1,1 @@
-export const Key = "AIzaSyDyxzRfxRkedqbwBlJIEy9rFGdA-jx281c"
+export const KEY = "AIzaSyDyxzRfxRkedqbwBlJIEy9rFGdA-jx281c"

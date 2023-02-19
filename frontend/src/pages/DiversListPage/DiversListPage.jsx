@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import DiverProfiles from "../../components/DiverProfiles/DiverProfiles";
+
 
 import axios from "axios";
 
@@ -32,26 +31,67 @@ const DiversListPage = () => {
 
 
   return (
-    <div className="profile-container">
-    <h1>{user.username}!</h1>
-    {diversList &&
-      diversList.map((element) => (
-        <p key={user.id}>
-          <p>First Name: {element.user.first_name}</p>
-          <p>Last Name: {element.user.last_name}</p>
-          <p>City: {element.user_city}</p>
-          <p>State: {element.user_state}</p>
-          <p>Country: {element.user_country}</p>
-          <p>Account Type: {element.user_type}</p>      
-          <p>Certifaction Agency: {element.user_cert_agency}</p>
-          <p>Certifaction Level: {element.user_cert_level}</p>
-          <p>Available to Dive: {element.user_availibility}</p>       
-        </p>
+
+    <div className='table-container'>
+        <table className='table table-bordered table-stripped'>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Account Type:</th>      
+                    <th>Certifaction Agency:</th>
+                    <th>Certifaction Level:</th>
+                    <th>Available to Dive:</th>
+                </tr>
+            </thead>
+            <tbody>
+            {diversList &&
+            diversList.map((element) => {
+              
+            return (              
+            <tr key={user.id}>
+              <td>{element.user.first_name}</td>
+              <td>{element.user.last_name}</td>
+              <td>{element.user_city}</td>
+              <td>{element.user_state}</td>
+              <td>{element.user_country}</td>
+              <td>{element.user_type}</td>      
+              <td>{element.user_cert_agency}</td>
+              <td>{element.user_cert_level}</td>
+              <td>{element.user_availibility ? "Available" : "Not Availalbe"}</td>       
+            </tr>
+            ) 
+             })}            
+                        
+        </tbody>
+      </table>
+      </div>
+     );
+}
+
+//     <div className="profile-container">
+//     <h1>{user.username}!</h1>
+//     {diversList &&
+//       diversList.map((element) => (
+//         <p key={user.id}>
+//           <p>First Name: {element.user.first_name}</p>
+//           <p>Last Name: {element.user.last_name}</p>
+//           <p>City: {element.user_city}</p>
+//           <p>State: {element.user_state}</p>
+//           <p>Country: {element.user_country}</p>
+//           <p>Account Type: {element.user_type}</p>      
+//           <p>Certifaction Agency: {element.user_cert_agency}</p>
+//           <p>Certifaction Level: {element.user_cert_level}</p>
+//           <p>Available to Dive: {element.user_availibility}</p>       
+//         </p>
         
-      ))}
-  </div>
-      );
-};
+//       ))}
+//   </div>
+//       );
+// };
 
 
 export default DiversListPage;

@@ -33,12 +33,12 @@ def user_product(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
-def user_product_detail(request, pk):
+def user_product_detail(request, id):
     print(
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
-    user_product= get_object_or_404(Product, id=pk)
+    user_product= get_object_or_404(Product, id=id)
     if request.method == 'GET':
-        user_product = get_object_or_404(Product, pk=pk)
+        user_product = Product.objects.filter(id=id)
         serializer = ProductSerializer(user_product, many=True)
         return Response(serializer.data)
 

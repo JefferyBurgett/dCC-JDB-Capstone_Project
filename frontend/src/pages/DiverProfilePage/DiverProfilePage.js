@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 import DiverProfiles from "../../components/DiverProfiles/DiverProfiles";
 
-import axios from "axios";
 
 const DiverProfilePage = () => {
   
