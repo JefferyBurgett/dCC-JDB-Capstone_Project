@@ -2,7 +2,7 @@
 /node_modules
 
 #localKey
-localKey.js
+/src/localKey.js
 
 
 # Logs

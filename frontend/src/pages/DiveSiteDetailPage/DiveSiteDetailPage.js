@@ -32,20 +32,6 @@ const DiveSiteDetailPage = () => {
             
           };
 
-        //   //This is what I added to add the map - delete if needed
-        //   function GoogleMap() {
-        //     const { isLoaded } = useLoadScript({
-        //         googleMapsApiKey: "AIzaSyDyxzRfxRkedqbwBlJIEy9rFGdA-jx281c",
-        //     });
-            
-        //     if (!isLoaded) return <div>Loading...</div>;
-        //     return <Map />;
-        // }  
-        // const center = useMemo(() => ({ lat: site_lat[0]?.site_lat, lng: site_lng[0]?.site_lng }), []);
-            
-        //     //
-          
-
     return (
       <div>
         <div>
@@ -53,14 +39,14 @@ const DiveSiteDetailPage = () => {
             <p>City: {dive_site[0]?.site_city}</p>
             <p>State: {dive_site[0]?.site_state}</p>
             <p>Country: {dive_site[0]?.site_country}</p>
+            <p>Latitude: {dive_site[0]?.site_lat}</p>
+            <p>Longitude: {dive_site[0]?.site_lng}</p>
         </div>
         <div id="map"></div>
 
         <div>
-        {/* {/* <GoogleMap zoom={14} center={center} mapContainerClassName="map-container">
-        <Marker position={center} />
-        </GoogleMap> */}
-          <Google_DSMap />
+       
+          <Google_DSMap lat={dive_site[0]?.site_lat} lng={dive_site[0]?.site_lng} />
           <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
           <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} />
         </div>
