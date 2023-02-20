@@ -31,6 +31,21 @@ def user_divers(request):
         serializer = DiverSerializer(divers, many=True)
         return Response(serializer.data)
     
+api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def user_post_review (request):
+    print(
+        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    
+    if request.method == 'POST':
+        serializer = DiverSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
+
+
+    
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def divers_detail(request, pk):
@@ -45,8 +60,8 @@ def divers_detail(request, pk):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def filter_by_id(request,id):
-    divers = get_object_or_404(Diver, pk=id)
+def filter_by_id(request,user_id):
+    divers = Diver.objects.filter(user_id=user_id)
     serializer = DiverSerializer(divers, many=True)
     return Response(serializer.data)
 

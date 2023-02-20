@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/diverslist" element={<PrivateRoute><DiversListPage /></PrivateRoute>} />
-        <Route path="/home" element={<PrivateRoute><DiverProfilePage /></PrivateRoute>}/>
+        <Route path="/diverdetail/" element={<PrivateRoute><DiverProfilePage /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/divesite" element={<PrivateRoute><DiveSitePage /></PrivateRoute>} />

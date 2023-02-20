@@ -57,7 +57,7 @@ const DiveSiteModal = (props) => {
 
 
   return (
-    <div>
+    <div className="ds-modal">
     <button onClick={showModal}>Add Dive Site</button>
         <Modal show={isOpen} size="xl" onHide={hideModal}>
           <Modal.Header>

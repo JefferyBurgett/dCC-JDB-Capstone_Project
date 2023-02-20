@@ -19,7 +19,7 @@ const Navbar = () => {
             <Link to='/diverslist/'>Divers Directory</Link>
           </li>
           <li>
-            <Link to='/home/'>Diver Profile</Link>
+            <Link to='/diverdetail/'>Diver Profile</Link>
           </li>
           <li>
             <Link to='/divesite/'>Dive Sites</Link>

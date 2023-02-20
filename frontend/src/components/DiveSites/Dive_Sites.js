@@ -3,6 +3,7 @@ import DiveSitesList from "./DiveSitesList/DiveSitesList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import "./Dive_Sites.css";
 
 const DiveSites = (props) => {
     const [user, token] = useAuth();

@@ -29,7 +29,7 @@ def user_ds_review(request):
         ds_review = DS_Review.objects.filter(user_id=request.user.id)
         serializer = DS_ReviewSerializer(ds_review, many=True)
         return Response(serializer.data)
-api_view(['GET', 'POST'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def user_ds_post_review (request):
     print(
