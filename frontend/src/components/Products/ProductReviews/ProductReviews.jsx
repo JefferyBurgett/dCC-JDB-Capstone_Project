@@ -33,7 +33,7 @@ return (
      product_reviews.map((product_review) => {
       return (
        <li key={product_review.product_id}>
-        {product_review.pd_review_text}
+        {user.username}, {product_review.pd_review_date},{product_review.pd_review_text}
        </li>     
      );
     })}

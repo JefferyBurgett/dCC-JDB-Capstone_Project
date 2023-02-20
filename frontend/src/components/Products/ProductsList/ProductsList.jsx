@@ -11,7 +11,7 @@ const ProductList = (props) => {
   
 
   return (
-        <div className="container">
+        <div className="product-container">
           <h1>Products</h1>
           {props.products &&
             props.products.map((product) => (

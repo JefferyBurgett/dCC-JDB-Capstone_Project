@@ -25,7 +25,14 @@ def user_product_review(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
-        product_review = Product_Review.objects.filter(user_id=request.user.id)
-        serializer = ProductReviewSerializer(product_review, many=True)
-        return Response(serializer.data)
+    # elif request.method == 'GET':
+    #     product_review = Product_Review.objects.filter(user_id=request.user.id)
+    #     serializer = ProductReviewSerializer(product_review, many=True)
+    #     return Response(serializer.data)
+    
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_review_by_product_id(request,product_id):
+    product_review = Product_Review.objects.filter(product_id=product_id)
+    serializer = ProductReviewSerializer(product_review, many=True)
+    return Response(serializer.data)

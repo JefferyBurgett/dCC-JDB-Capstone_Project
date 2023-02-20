@@ -34,7 +34,7 @@ const TipTrickPage = () => {
       {tiptricks &&
         tiptricks.map((tip_trick) => (
           <p key={tip_trick.id}>
-            {tip_trick.tt_text} 
+            {user.username} - {tip_trick.tt_text} 
           </p>
         ))}
     </div>

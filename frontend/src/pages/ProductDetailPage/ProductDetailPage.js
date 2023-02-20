@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import ProductReviews from "../../components/Products/ProductReviews/ProductReviews";
-import ProductModal from "../../components/Products/ProductModal/ProductModal";
+import ProductReviewModal from "../../components/Products/ProductReviews/ProductReviewModal";
 
 const ProductDetailPage = () => {
     const {productId} = useParams();
@@ -32,20 +32,34 @@ const ProductDetailPage = () => {
 
     return (
         <div>
-            <div>
-                <h1>Product Details</h1>
-                <h1>Product Brand: {product[0]?.product_brand}</h1>
-                <h1>Product Name: {product[0]?.product_name}</h1>
-                <h1>Product Type: {product[0]?.product_type}</h1>
-                <h1>Product Price: {product[0]?.product_price}</h1>
-            </div>
+            <div className='product-table-container'>
+                <table className='table table-bordered table-stripped'>
+                    <thead>
+                        <tr>
+                            <th>Product Brand</th>
+                            <th>Product Name</th>
+                            <th>Product Type</th>
+                            <th>Product Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>           
+                        <tr>
+                            <td>{product[0]?.product_brand}</td>
+                            <td>{product[0]?.product_name}</td>
+                            <td>{product[0]?.product_type}</td>
+                            <td>{product[0]?.product_price}</td>    
+                        </tr>      
+                    </tbody>
+                </table>
+            </div> 
 
             <div>
                 <ProductReviews product_review={product_review} setPD_Reviews={setPD_Reviews} />
-                <ProductModal setPD_Reviews={setPD_Reviews} />
+                <ProductReviewModal setPD_Reviews={setPD_Reviews} />
             </div>
         </div>
     );
 };
 
 export default ProductDetailPage;
+

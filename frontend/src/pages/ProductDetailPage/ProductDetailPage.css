@@ -1,0 +1,8 @@
+.product-list {
+margin: 25% auto;
+max-width: 500px;
+overflow: auto;
+text-align: center;
+vertical-align: middle;
+background-color: lightgrey;
+}

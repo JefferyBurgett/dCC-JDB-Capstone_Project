@@ -34,6 +34,7 @@ api_view(['GET', 'POST'])
 def user_ds_post_review (request):
     print(
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    
     if request.method == 'POST':
         serializer = DS_ReviewSerializer(data=request.data)
         if serializer.is_valid():

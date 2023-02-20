@@ -4,8 +4,8 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import DiveSiteReviewModal from "../../components/DiveSites/DiveSIteReviewModal/DiveSiteReviewModal";
 import DiveSiteReviewList from "../../components/DiveSites/DiveSiteReviews/DiveSiteReviewList";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import Google_DSMap from "../../components/GoogleMap/GoogleDSMap";
+import "./DiveSiteDetailPage.css"
 
 const DiveSiteDetailPage = () => {
     const {siteId} = useParams();
@@ -44,11 +44,7 @@ const DiveSiteDetailPage = () => {
               <p>Longitude: {dive_site[0]?.site_lng}</p>
           </div>
         </div>
-
-        {/* <div className="map-container" id="map">       */}
           <Google_DSMap lat={dive_site[0]?.site_lat} lng={dive_site[0]?.site_lng} />
-        
-        {/* </div> */}
         <div>
           <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
           <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} />

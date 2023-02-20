@@ -1,0 +1,28 @@
+.product-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin: .5rem;
+    }
+    
+.product-container {
+    margin: 0 auto;
+    padding: 2%;
+    max-width: 500px;
+    overflow: auto;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: rgb(70, 70, 70);
+    border-radius: 2%;
+}
+
+.product-list {
+    justify-content: center;
+    text-align: center;
+    
+}
+h1 {
+    color: white;
+}

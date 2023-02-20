@@ -19,12 +19,14 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid blue;
+  color: blue;
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
   padding: 0.5rem 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
@@ -35,10 +37,11 @@ button:hover {
 
 .container {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
   overflow: auto;
   text-align: center;
-  background-color: dimgrey;
+  vertical-align: middle;
+  background-color: lightgrey;
 }
 
 .form {
@@ -70,3 +73,8 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+.p {
+  text-align: center;
+  justify-content: center;
+}

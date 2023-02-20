@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,7 +17,7 @@ const DiveSiteModal = (props) => {
       setIsOpen(false);
     };
 
-    const [user, token] = useAuth();
+    const [user,token] = useAuth();
     const [site_name, setSite_Name] = useState();
     const [site_city, setSite_City] = useState();
     const [site_state, setSite_State] = useState();

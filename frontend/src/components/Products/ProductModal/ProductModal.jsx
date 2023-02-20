@@ -51,7 +51,7 @@ const ProductModal = (props) => {
 
 
   return (  
-      <>
+      <div className="product-modal">
         <button onClick={showModal}>Add Product</button>
         <Modal show={isOpen} size="lg" onHide={hideModal}>
           <Modal.Header>
@@ -109,7 +109,7 @@ const ProductModal = (props) => {
             <button onClick={handleSubmit} type="submit">Submit</button>
           </Modal.Footer>
         </Modal>
-      </>
+      </div>
     );
   };
     

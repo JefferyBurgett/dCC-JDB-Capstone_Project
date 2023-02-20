@@ -2,7 +2,8 @@ import ProductModal from "./ProductModal/ProductModal";
 import ProductsList from "./ProductsList/ProductsList";
 import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
-import axios from 'axios'
+import axios from 'axios';
+import "./Products.css"
 
 
 const Products = (props) => {
@@ -26,10 +27,16 @@ const Products = (props) => {
       }
     };
     return (
-        <div>
-          <ProductModal getAllProducts={fetchProducts} />
-          <ProductsList products={products} setProducts={setProducts} />
+      <div>
+        <div className="product-list-container">
+          <div className="product-modal">
+            <ProductModal getAllProducts={fetchProducts} />
+          </div>
+          <div className="product-list">
+            <ProductsList products={products} setProducts={setProducts} />
+          </div>
         </div>
+      </div>
       );
     };
     
