@@ -1,0 +1,30 @@
+.table-section {
+    background-color: grey;
+  
+}
+
+.table-container {  
+    margin: auto;
+    height: 500px;
+    overflow: auto;
+    background-color: rgb(47, 47, 47);
+
+}
+
+.table {
+    background-color: white;
+    margin-top: 2%;
+    max-width: 95%;
+    justify-items: center;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle; 
+    justify-content: center; 
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}

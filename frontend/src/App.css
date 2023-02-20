@@ -38,6 +38,7 @@ button:hover {
   max-width: 600px;
   overflow: auto;
   text-align: center;
+  background-color: dimgrey;
 }
 
 .form {
@@ -58,6 +59,14 @@ button:hover {
 }
 
 .map-container {
-  width: 25%;
-  height: 25vh;
+  display: flex;
+  width: 40%;
+  height: 40vh;
+  margin: auto;
 }
+
+/* .modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */

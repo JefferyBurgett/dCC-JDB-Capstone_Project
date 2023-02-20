@@ -20,11 +20,11 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import { useEffect } from "react";
+
 
 
 function App() {
-
+  
 
   return (
     <div> 

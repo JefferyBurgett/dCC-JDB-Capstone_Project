@@ -29,7 +29,7 @@ const DiveSiteReviewModal = (props) => {
             review_text: review_text,
             
             };
-            await axios.post(`http://127.0.0.1:8000/api/ds_review/${siteId}`, newDS_Review, {
+            await axios.post(`http://127.0.0.1:8000/api/ds_review/${siteId}/`, newDS_Review, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useAuth from "../../../hooks/useAuth";
-import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 
 
 const ProductList = (props) => {

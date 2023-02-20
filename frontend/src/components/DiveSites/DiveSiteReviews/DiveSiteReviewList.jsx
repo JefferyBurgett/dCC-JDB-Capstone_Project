@@ -33,7 +33,8 @@ return (
      ds_reviews.map((ds_review) => {
       return (
        <li key={ds_review.dive_site_id}>
-        {ds_review.review_text}
+        <p>{ds_review.user_id},{ds_review.review_date} </p>
+        <p>{ds_review.review_text} </p>
        </li>     
      );
     })}

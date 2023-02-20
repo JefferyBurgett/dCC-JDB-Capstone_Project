@@ -59,25 +59,24 @@ const DiveSiteModal = (props) => {
   return (
     <div>
     <button onClick={showModal}>Add Dive Site</button>
-        <Modal show={isOpen} onHide={hideModal}>
+        <Modal show={isOpen} size="xl" onHide={hideModal}>
           <Modal.Header>
-            <Modal.Title>Add Dive Site</Modal.Title>
+            <Modal.Title>Add Dive Site - Get Latitude and Longitude from Google Maps</Modal.Title>
           </Modal.Header>
           <Modal.Body>
                 <form className='createForm'>
                     <div className="row">
-                    <div className="col">
-                        <label>Add Dive Site</label>
-                        <div>
-                        <label>Dive Site Name</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={site_name}
-                            onChange={(event) => setSite_Name(event.target.value)}
-                        />
-                        </div>
-                    </div>
+                      <div className="col">
+                          <div>
+                            <label>Dive Site Name</label>
+                              <input
+                                  type="text"
+                                  className="form-control"
+                                  value={site_name}
+                                  onChange={(event) => setSite_Name(event.target.value)}
+                              />
+                          </div>
+                      </div>
 
                         <div className="col">
                         <label>Dive Site City</label>
