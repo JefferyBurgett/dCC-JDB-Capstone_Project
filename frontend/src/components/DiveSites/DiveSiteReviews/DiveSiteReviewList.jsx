@@ -13,7 +13,7 @@ const DiveSiteReviewList = (props) => {
     displayReviews();
   }, [props.siteId]);
 
-  async function displayReviews() {
+  const displayReviews = async () => {
     try {
     let response = await axios.get(
       `http://127.0.0.1:8000/api/ds_review/${siteId}/`, {

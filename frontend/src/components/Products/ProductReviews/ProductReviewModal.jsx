@@ -29,7 +29,7 @@ const ProductReviewModal = (props) => {
             pd_review_text: pd_review_text,
             
             };
-            await axios.post(`http://127.0.0.1:8000/api/product_review/${productId}/`, newProduct_Review, {
+            await axios.post(`http://127.0.0.1:8000/api/product_review/`, newProduct_Review, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },

@@ -17,27 +17,29 @@ const DiveSiteReviewModal = (props) => {
     const hideModal = () => {
       setIsOpen(false);
     };
-    const {siteId} = useParams();
+    const { siteId } = useParams();
     const [user, token] = useAuth();
     const [review_text, setReview_Text] = useState();
+    const [dive_site_id, setDive_Site_Id] = useState();
  
                
     async function handleSubmit(event) {
         try { 
             event.preventDefault();
             let newDS_Review = {
-            review_text: review_text,
-            
+              dive_site_id: siteId,
+              review_text: review_text,
             };
-            await axios.post(`http://127.0.0.1:8000/api/ds_review/${siteId}/`, newDS_Review, {
+
+            await axios.post("http://127.0.0.1:8000/api/ds_review/dive_site_id/", newDS_Review, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.DS_reviews(true);
             setReview_Text("");
+            setDive_Site_Id("");
             hideModal();
-            props.getDSReviews();
+            props.getDiveSiteReviews();
             } catch (error) {
               console.log(error.message);
             }

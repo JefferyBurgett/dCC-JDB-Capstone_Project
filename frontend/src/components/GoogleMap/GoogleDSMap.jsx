@@ -1,11 +1,9 @@
 // Map Displays with this version - 1
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { KEY } from "../../localKey";
-
 
 function Google_DSMap(props) {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: KEY,
+        googleMapsApiKey: process.env.REACT_APP_PUBLIC_GOOGLE_MAPS_API_KEY,
     });
 
     if (!isLoaded) {

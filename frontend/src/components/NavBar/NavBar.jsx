@@ -16,19 +16,19 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to='/diverslist/'>Divers Directory</Link>
+          <a class="nav-item-nb nav-link" href="/diverslist">Divers Directory</a>
           </li>
           <li>
-            <Link to='/diverdetail/'>Diver Profile</Link>
+          <a class="nav-item-nb nav-link" href="/diverdetail/">Diver Profile</a>
           </li>
           <li>
-            <Link to='/divesite/'>Dive Sites</Link>
+            <a class="nav-item-nb nav-link" href='/divesite/'>Dive Sites</a>
           </li>
           <li>
-            <Link to='/product/'>Products</Link>
+            <a class="nav-item-nb nav-link" href='/product/'>Products</a>
           </li>
           <li>
-            <Link to='/tiptrick/'>Tip & Tricks</Link>
+            <a class="nav-item-nb nav-link" href='/tiptrick/'>Tip & Tricks</a>
           </li>
           <li>
             {user ? (
