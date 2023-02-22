@@ -4,6 +4,7 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import ProductReviews from "../../components/Products/ProductReviews/ProductReviews";
 import ProductReviewModal from "../../components/Products/ProductReviews/ProductReviewModal";
+import Product_Reviews from "../../components/Products/ProductReviews/Product_Review";
 
 const ProductDetailPage = () => {
     const {productId} = useParams();
@@ -54,8 +55,8 @@ const ProductDetailPage = () => {
             </div> 
 
             <div>
-                <ProductReviews product_review={product_review} setPD_Reviews={setPD_Reviews} />
-                <ProductReviewModal setPD_Reviews={setPD_Reviews} />
+                <Product_Reviews setPD_Reviews={setPD_Reviews} />
+                {/* <ProductReviewModal setPD_Reviews={setPD_Reviews} /> */}
             </div>
         </div>
     );

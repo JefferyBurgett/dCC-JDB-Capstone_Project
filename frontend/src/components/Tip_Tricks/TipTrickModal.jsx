@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import Modal from 'react-bootstrap/Modal';
 
 
-const ProductReviewModal = (props) => {
+const TipTrickModal = (props) => {
 
     const [isOpen, setIsOpen] = useState(false);
   
@@ -17,53 +17,49 @@ const ProductReviewModal = (props) => {
     const hideModal = () => {
       setIsOpen(false);
     };
-    const {productId} = useParams();
+
     const [user, token] = useAuth();
-    const [product_id, setProduct_Id] = useState();
-    const [pd_review_text, setPD_Review_Text] = useState();
- 
-               
+    const [tt_text, setTT_Text] = useState();
+                
     async function handleSubmit(event) {
         try { 
             event.preventDefault();
-            let newProduct_Review = {
-              product_id: productId,
-              pd_review_text: pd_review_text,
-            
+            let newTipTrick = {
+              tt_text: tt_text,
             };
-            await axios.post(`http://127.0.0.1:8000/api/product_review/`, newProduct_Review, {
+
+            await axios.post("http://127.0.0.1:8000/api/tip_trick/", newTipTrick, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            setProduct_Id("");
-            setPD_Review_Text("");
+            setTT_Text("");
+            
             hideModal();
-            props.getProductReviews();
+            props.getAllTipTricks();
             } catch (error) {
               console.log(error.message);
             }
             };
 
-
   return (
     <div>
-    <button onClick={showModal}>Add Review</button>
+    <button onClick={showModal}>Add Tip or Trick</button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>
-            <Modal.Title>Add Product Review</Modal.Title>
+            <Modal.Title>Tip Trick</Modal.Title>
           </Modal.Header>
           <Modal.Body>
                 <form className='createForm'>
                     <div className="row">
                         <div className="col">
                             <div>
-                            <label>Product Review</label>
+                            <label>Dive Site Review</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={pd_review_text}
-                                onChange={(event) => setPD_Review_Text(event.target.value)}
+                                value={tt_text}
+                                onChange={(event) => setTT_Text(event.target.value)}
                             />
                             </div>
                         </div>                      
@@ -78,11 +74,4 @@ const ProductReviewModal = (props) => {
       </div>
     );
   };
-    
- 
-
-
-
-
-
-export default ProductReviewModal;
+export default TipTrickModal;

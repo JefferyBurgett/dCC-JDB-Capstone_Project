@@ -39,12 +39,11 @@ const DiveSiteReviewModal = (props) => {
             setReview_Text("");
             setDive_Site_Id("");
             hideModal();
-            props.getDiveSiteReviews();
+            props.getAllReviews();
             } catch (error) {
               console.log(error.message);
             }
             };
-
 
   return (
     <div>
@@ -78,11 +77,4 @@ const DiveSiteReviewModal = (props) => {
       </div>
     );
   };
-    
- 
-
-
-
-
-
 export default DiveSiteReviewModal;

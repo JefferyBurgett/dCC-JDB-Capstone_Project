@@ -2,10 +2,11 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-import DiveSiteReviewModal from "../../components/DiveSites/DiveSIteReviewModal/DiveSiteReviewModal";
-import DiveSiteReviewList from "../../components/DiveSites/DiveSiteReviews/DiveSiteReviewList";
+// import DiveSiteReviewModal from "../../components/SiteReviews/DiveSiteReviews/DiveSIteReviewModal/DiveSiteReviewModal";
+// import DiveSiteReviewList from "../../components/DiveSites/DiveSiteReviews/DiveSiteReviewList";
 import Google_DSMap from "../../components/GoogleMap/GoogleDSMap";
 import "./DiveSiteDetailPage.css"
+import SiteReviews from "../../components/DiveSiteReviews/SiteReviews";
 
 const DiveSiteDetailPage = () => {
     const {siteId} = useParams();
@@ -31,7 +32,7 @@ const DiveSiteDetailPage = () => {
             }
             
           };
-
+         
     return (
       <div>
         <div className="diveSite_container">
@@ -46,8 +47,9 @@ const DiveSiteDetailPage = () => {
         </div>
           <Google_DSMap lat={dive_site[0]?.site_lat} lng={dive_site[0]?.site_lng} />
         <div>
-          <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
-          <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} getDiveSiteReviews={fetchDive_Site}/>
+          <SiteReviews setDS_Reviews ={setDS_Reviews} />
+          {/* <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
+          <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} getDiveSiteReviews={displayReviews}/> */}
         </div>
     </div>
     );

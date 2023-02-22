@@ -28,7 +28,7 @@ const DiveSites = (props) => {
 
     return (
         <div>
-          <DiveSiteModal getAllDiveSites={fetchDive_Sites} />
+          <DiveSiteModal getDiveSiteReviews={fetchDive_Sites} />
           <DiveSitesList dive_sites={dive_sites} setDive_Sites={setDive_Sites} />
         </div>
       );
