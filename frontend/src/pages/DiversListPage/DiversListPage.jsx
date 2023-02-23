@@ -5,6 +5,7 @@ import "./DiversListPage.css"
 
 
 import axios from "axios";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const DiversListPage = () => {
   
@@ -34,8 +35,6 @@ const DiversListPage = () => {
 
   return (
     <div>
-
-      
       <div className='table-container'>
           <table className='table table-bordered table-stripped'>
               <thead>

@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const HomePage = () => {
-  
+  const [user, token] = useAuth();
+  console.log(user);
+  console.log(token);
+
+
+
   return (
     <div className="container">
       <h1>Welcome To DiverConnect!</h1>
