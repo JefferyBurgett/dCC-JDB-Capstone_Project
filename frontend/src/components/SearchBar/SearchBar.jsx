@@ -1,38 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 
 const SearchBar = (props) => {
   const [user, token] = useAuth();  
   const [category, setCategory] = useState("All");
   const [filterData, setFilterData] = useState();
+  const uniqueList = [];
+ 
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    props.filter(category, filterData)
-    console.log(category)
-}
-
-  // TOTAL STEPS
-  // DONE 1) select filter category - artist, album, etc
-  // 2) retrieve the values for that category - Billy Joel, Metallica, Justin Beiber
-  // 3) Populate a second dropdown with those values
-  // 4) Select from that second filter
-  // 5) Return only the songs that meet that filter
-  // const categories = songs.filter(filterData)
-  // function updatedCategoryList(category) {
 
   function chooseCategory(event) {
     event.preventDefault();
     const selectedCategory = document.querySelector('#category-list').value    
     setCategory(selectedCategory)
-    // return selectedCategory > document.getElementById("choosenCategory").value;
+    // const selectedFilterElement = document.getElementById('filterdata-list');   
+    // selectedFilterElement.selectedIndex= 0
   }
 
-    // 
+  function chooseFilterData(event) {
+    event.preventDefault();
+    // const selectedFilter = document.querySelector('#filterdata-list').value;
+    setFilterData(event.target.value) 
+    
+  }
+
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    filterDivers(category, filterData)
+    console.log(category)
+  }
   
-    // research "lifting state up" so the musicTable reflects the new songs list
-    // props.filterSongs(selectedCategory, filterData);
-  
+  function filterDivers(category, filterData) {
+    if (filterData == null) {return}
+    let response = props.diversList.filter((diver) =>{
+      if (diver[category].includes(filterData)) {
+        return true;
+      }
+    });
+    props.setDiversList(response)    
+  }
 
   return (
     <div className="search-bar">
@@ -51,22 +58,26 @@ const SearchBar = (props) => {
           </select>
           </div>
           <div className="col">
-          <select className="form-select" id = 'category-list'   onChange={(e) => setFilterData(e.target.value)} >
-            {props.diverslist.map((diver) => {
+          <select className="form-select" id = 'filterdata-list'  onChange={(e) => chooseFilterData(e)} >
+            <option></option>
+            {
+            uniqueList.map((diver, user) => {
               return (
                 <option key={user} value={diver[category]}>{diver[category]}</option>
               )
             })}
           </select>
-</div>
+        </div>
           <button className='filterbutton' onClick={handleSubmit}>Filter</button>
- 
-</div>
+        </div>
           <br></br>
-        </form>
-      </div>
+        </form>    
     </div>
+  </div>
   );
 };
 
 export default SearchBar;
+
+
+

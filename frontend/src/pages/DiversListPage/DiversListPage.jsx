@@ -2,20 +2,18 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import "./DiversListPage.css"
-
-
 import axios from "axios";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-const DiversListPage = () => {
+
+const DiversListPage = (props) => {
   
   const [user, token] = useAuth();
   const [diversList, setDiversList] = useState([]);
-  
+  const [originalList, setOriginalList] = useState([]);
   
   useEffect(() => {
-    const fetchDiversList = async () => {
-      
+    const fetchDiversList = async () => {      
       try {
         let response = await axios.get("http://127.0.0.1:8000/api/diver/all/", {
           headers: {
@@ -23,6 +21,7 @@ const DiversListPage = () => {
           },
         });
         setDiversList(response.data);
+        setOriginalList(response.data);
         console.log(response.data)
       } catch (error) {
         console.log(error.response.data);
@@ -33,8 +32,10 @@ const DiversListPage = () => {
   
 
 
-  return (
+  return ( 
     <div>
+      <SearchBar diversList={originalList} setDiversList={setDiversList} />
+
       <div className='table-container'>
           <table className='table table-bordered table-stripped'>
               <thead>
@@ -73,7 +74,7 @@ const DiversListPage = () => {
         </table>
         </div>
       </div>
+    
      );
-}
-
+};
 export default DiversListPage;

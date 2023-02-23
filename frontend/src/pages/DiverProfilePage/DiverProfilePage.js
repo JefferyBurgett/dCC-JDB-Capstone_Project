@@ -30,6 +30,7 @@ const DiverProfilePage = () => {
     fetchDiver();
   }, [token]);
   return (
+    
     <div>
         <SingleProfile setDiver={setDiver} />
     </div>

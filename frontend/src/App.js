@@ -12,7 +12,7 @@ import DiveSiteDetailPage from "./pages/DiveSiteDetailPage/DiveSiteDetailPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import TipTrickPage from "./pages/TipTrickPage/TipTrickPage";
-import DiverDirectory from "./pages/DiversListPage/DiversListPage";
+import DiversListPage from "./pages/DiversListPage/DiversListPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -31,7 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/diverslist" element={<PrivateRoute><DiverDirectory /></PrivateRoute>} />
+        <Route path="/diverslist" element={<PrivateRoute><DiversListPage /></PrivateRoute>} />
         <Route path="/diverprofile/:userId" element={<PrivateRoute><DiverProfilePage /></PrivateRoute>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
