@@ -27,7 +27,7 @@ const Navbar = () => {
       <row className="nav-row">
         <ul>
           <li className="brand">
-          <a class="nav-item nav-link" href="/">DiverConnect</a>
+          <a class="brand nav-link" href="/">DiverConnect</a>
           </li>
           <li>
             <a class="nav-item-nb nav-link" href="/diverslist">Divers Directory</a>

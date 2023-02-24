@@ -1,16 +1,25 @@
 .dive-site{
     margin:5px;
+    margin-left: 30%;
     border:1px black solid;
+    background-color: black;
     padding:3px;
     border-radius:5px;
     font-size:1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+
 }
 
 .dive-site a {
-    color: black;
+    color: rgb(255, 255, 255);
+    background-color: black;
     text-decoration: none;
 }
 
 .dive-site a:hover{
     background-color:darkgray;
 }
+

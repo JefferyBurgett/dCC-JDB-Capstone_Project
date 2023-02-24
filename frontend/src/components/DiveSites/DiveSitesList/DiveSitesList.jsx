@@ -12,7 +12,7 @@ const DiveSitesList = (props) => {
   
   return (
      <div className="divesite-container">
-      <h1>Dive Sites</h1>
+      <h1>Dive Locations</h1>
         {props.dive_sites &&
         props.dive_sites.map((dive_site) => (          
             <div className="dive-site" key={dive_site.id}>
