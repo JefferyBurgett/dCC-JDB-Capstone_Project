@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import "./DiveSiteReview.css";
 
 
 const DiveSiteReviewList = (props) => {
@@ -32,10 +33,10 @@ return (
      {props.ds_reviews &&
      props.ds_reviews.map((ds_review) => {
       return (
-       <li key={ds_review.dive_site_id}>
-        <p>{ds_review.user_id},{ds_review.review_date} </p>
+       <div className="review-div" key={ds_review.dive_site_id}>
+        <p className="review-date">{ds_review.user.username} </p>
         <p>{ds_review.review_text} </p>
-       </li>     
+       </div>     
      );
     })}
   </div>

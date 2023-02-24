@@ -6,6 +6,10 @@
     margin: .5rem;
 }
 
+.ds-modal button{
+    background-color:lightblue;
+}
+
 .divesite-container {
     padding: 2%;
     width: 100%;
@@ -13,8 +17,18 @@
     text-align: center;
     justify-content: center;
     vertical-align: middle;
-    background-color: rgb(70, 70, 70);
+    border:1px black solid;
     border-radius: 2%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.divesite-container li{
+    text-align: center;
+    border:1px solid black;
+    border-radius: 5px;
+    margin:1.5rem;
 }
 
 .divesite-list {

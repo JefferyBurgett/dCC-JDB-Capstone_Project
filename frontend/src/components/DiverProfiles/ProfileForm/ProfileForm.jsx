@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
@@ -33,7 +33,8 @@ const ProfileForm = (props) => {
                     Authorization: 'Bearer ' + token,
                 },
             });
-            props.setDiver(true);
+            // props.setDiver(newProfile);
+            window.location.reload();
             setUser_City("");
             setUser_State("");
             setUser_Country("");

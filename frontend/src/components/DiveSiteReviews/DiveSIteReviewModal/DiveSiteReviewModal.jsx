@@ -46,7 +46,7 @@ const DiveSiteReviewModal = (props) => {
             };
 
   return (
-    <div>
+    <div id="modal-div">
     <button onClick={showModal}>Add Review</button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>

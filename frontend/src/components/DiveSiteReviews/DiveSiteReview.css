@@ -1,0 +1,46 @@
+.container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.container h1{
+    width:100%;
+    text-align: center;
+    color:black;
+    margin-top:10px;
+}
+
+#review-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.review-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+#modal-div{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.review-div{
+    width:40%;
+    text-align: center;
+    border:1px solid black;
+    border-radius:5px;
+    margin:10px;
+}
+
+.review-date{
+    font-weight: bold;
+}

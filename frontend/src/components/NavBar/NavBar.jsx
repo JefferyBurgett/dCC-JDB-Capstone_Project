@@ -23,19 +23,18 @@ const Navbar = () => {
 
   
   return (
-    <div className="navBar" align="center">
+    <nav className="nav">
+      <row className="nav-row">
         <ul>
           <li className="brand">
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              <b>DiverConnect</b>
-            </Link>
+          <a class="nav-item nav-link" href="/">DiverConnect</a>
           </li>
           <li>
-          <a class="nav-item-nb nav-link" href="/diverslist">Divers Directory</a>
+            <a class="nav-item-nb nav-link" href="/diverslist">Divers Directory</a>
           </li>
-          {user &&
-          <li>
-          <a class="nav-item-nb nav-link" href={"/diverprofile/" + user.id}>Diver Profile</a>
+            {user &&
+          <li> 
+            <a class="nav-item-nb nav-link" href={"/diverprofile/" + user.id}>Diver Profile</a>
           </li>
           }
 
@@ -50,13 +49,14 @@ const Navbar = () => {
           </li>
           <li>
             {user ? (
-              <button onClick={logoutUser}>Logout</button>
+              <button className="nav-button" onClick={logoutUser}>Logout</button>
             ) : (
               <button onClick={() => navigate("/login")}>Login</button>
             )}
           </li>
         </ul>
-    </div>
+      </row>
+    </nav>
   );
 };
 

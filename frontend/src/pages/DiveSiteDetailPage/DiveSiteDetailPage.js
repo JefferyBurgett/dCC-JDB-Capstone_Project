@@ -34,24 +34,20 @@ const DiveSiteDetailPage = () => {
           };
          
     return (
-      <div>
+      <div id="divesite-detail-div">
         <div className="diveSite_container">
-          <div>
-              <h1>Dive Site Name: {dive_site[0]?.site_name}</h1>
-              <p>City: {dive_site[0]?.site_city}</p>
-              <p>State: {dive_site[0]?.site_state}</p>
-              <p>Country: {dive_site[0]?.site_country}</p>
-              <p>Latitude: {dive_site[0]?.site_lat}</p>
-              <p>Longitude: {dive_site[0]?.site_lng}</p>
-          </div>
+            <h1>Dive Site Name: {dive_site[0]?.site_name}</h1>
+            <p>City: {dive_site[0]?.site_city}</p>
+            <p>State: {dive_site[0]?.site_state}</p>
+            <p>Country: {dive_site[0]?.site_country}</p>
+            <p>Latitude: {dive_site[0]?.site_lat}</p>
+            <p>Longitude: {dive_site[0]?.site_lng}</p>
         </div>
           <Google_DSMap lat={dive_site[0]?.site_lat} lng={dive_site[0]?.site_lng} />
-        <div>
           <SiteReviews setDS_Reviews ={setDS_Reviews} />
           {/* <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
           <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} getDiveSiteReviews={displayReviews}/> */}
-        </div>
-    </div>
+      </div>
     );
 };
 

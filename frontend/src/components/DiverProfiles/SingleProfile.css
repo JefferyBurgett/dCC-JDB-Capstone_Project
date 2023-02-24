@@ -1,0 +1,28 @@
+.profile-p{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+  }
+  
+  .profile-p p{
+    width:100%;
+  }
+
+  .profile-p button{
+    margin:1.5rem;
+    background-color:lightblue;
+  }
+
+  .profile-container{
+    border: 1px solid black;
+    max-width:400px;
+    border-radius:5px;
+    margin-top:1.5rem;
+    background-color:lightgray;
+  }
+
+  .profile-parent-div{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+  }

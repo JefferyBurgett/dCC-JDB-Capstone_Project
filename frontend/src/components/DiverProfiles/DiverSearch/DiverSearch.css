@@ -1,0 +1,7 @@
+.search-container{
+    max-width:600px;
+    color:blue;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}

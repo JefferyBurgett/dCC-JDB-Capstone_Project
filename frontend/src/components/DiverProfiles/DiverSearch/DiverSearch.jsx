@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./DiverSearch.css"
 
 
 const DiverSearch = (props) => {
@@ -19,7 +20,7 @@ const DiverSearch = (props) => {
 
   return (
     <div className="search-bar">
-      <div className="search-container">
+      <div>
         <h2>Search Divers</h2>
         <form onSubmit={handleSubmit}>
           <div className="row">

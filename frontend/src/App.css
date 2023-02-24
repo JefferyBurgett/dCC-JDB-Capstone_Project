@@ -8,6 +8,8 @@
   box-sizing: inherit;
 }
 
+
+
 html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -35,14 +37,14 @@ button:hover {
   background-color: steelblue;
 }
 
-.container {
+/* .container {
   margin: 0 auto;
   max-width: 500px;
   overflow: auto;
   text-align: center;
   vertical-align: middle;
   background-color: lightgrey;
-}
+} */
 
 .form {
   align-items: center;
@@ -77,4 +79,8 @@ button:hover {
 .p {
   text-align: center;
   justify-content: center;
+}
+
+body{
+  background-color:lightgray !important;
 }

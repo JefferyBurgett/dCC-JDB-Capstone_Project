@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 const DiverProfilePage = () => {
-  const { userId } = useParams
+  const { userId } = useParams();
   const [user, token] = useAuth();
   const [diver, setDiver] = useState([]);
   
@@ -16,7 +16,7 @@ const DiverProfilePage = () => {
     const fetchDiver = async () => {
       
       try {
-        let response = await axios.get(`http://127.0.0.1:8000/api/diver/${userId}`,{
+        let response = await axios.get(`http://127.0.0.1:8000/api/diver/${userId}/`,{
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -30,9 +30,9 @@ const DiverProfilePage = () => {
     fetchDiver();
   }, [token]);
   return (
-    
+
     <div>
-        <SingleProfile setDiver={setDiver} />
+        <SingleProfile userId={userId} setDiver={setDiver} />
     </div>
   );
 };

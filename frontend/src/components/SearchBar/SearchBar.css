@@ -1,0 +1,28 @@
+.search-bar{
+    max-width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.search-bar h2{
+    width:100%;
+    text-align: center;
+}
+
+.search-container{
+    max-width:80%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.search-bar .form-select{
+    width:350px;
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+
+.search-bar button{
+    background-color:lightblue;
+}

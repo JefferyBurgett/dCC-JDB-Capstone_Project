@@ -27,4 +27,22 @@ th {
 td {
     text-align: center;
     vertical-align: middle;
+    background-color:lightgray !important;
+}
+
+tr{
+    background-color:lightgray !important;
+    border-color:black;
+}
+
+.table-container{
+    background-color:transparent;
+    width:90%;
+}
+
+#divers-list-div{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    width:100%;
 }

@@ -29,7 +29,29 @@ def user_divers(request):
     elif request.method == 'GET':
         divers = Diver.objects.all()
         serializer = DiverSerializer(divers, many=True)
-        return Response(serializer.data)    
+        return Response(serializer.data)
+    
+@api_view(['PATCH'])
+@permission_classes([AllowAny])
+def available(request, user_id):
+        # print(
+        # 'User ', f"{request.user.id} {request.user.email} {request.user.username}")   
+        diver = get_object_or_404(Diver, user_id=user_id)  
+        serializer = DiverSerializer(diver, {'user_availibility':True}, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+@api_view(['PATCH'])
+@permission_classes([AllowAny])
+def unavailable(request, user_id):
+        print(request)     
+        diver = get_object_or_404(Diver, user_id=user_id)  
+        serializer = DiverSerializer(diver, {'user_availibility':False}, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+     
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -59,14 +81,3 @@ def filter_by_country(request,user_country):
     serializer = DiverSerializer(divers, many=True)
     return Response(serializer.data)
 
-# @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# def divers_detail(request, pk):
-#         print(
-#         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
-#         divers = get_object_or_404(Diver, pk=pk) 
-#         if request.method == 'PUT':
-#             serializer = DiverSerializer(divers, data=request.data)
-#             serializer.is_valid(raise_exception=True)
-#             serializer.save()
-#             return Response(serializer.data)

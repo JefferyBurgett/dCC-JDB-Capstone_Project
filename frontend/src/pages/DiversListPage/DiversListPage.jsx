@@ -33,7 +33,7 @@ const DiversListPage = (props) => {
 
 
   return ( 
-    <div>
+    <div id="divers-list-div">
       <SearchBar diversList={originalList} setDiversList={setDiversList} />
 
       <div className='table-container'>
