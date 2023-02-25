@@ -48,87 +48,45 @@ const ProfileForm = (props) => {
 
 
   return (
-    
-      <form className='createForm' onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col">
-            <div>
-              <label>City</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_city}
-                onChange={(event) => setUser_City(event.target.value)}
-              />
-            </div>
-         </div>
-
-            <div className="col">
-              <label>State</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_state}
-                onChange={(event) => setUser_State(event.target.value)}
-              />
-            </div>
-
-            <div className="col">
-              <label>Country</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_country}
-                onChange={(event) => setUser_Country(event.target.value)}
-              />
-            </div>
-
-            <div className="col">
-              <label>Account Type</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_type}
-                onChange={(event) => setUser_Type(event.target.value)}
-              />
-            </div>
-
-            <div className="col">
-              <label>Certification Agency</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_cert_agency}
-                onChange={(event) => setUser_Cert_Agency(event.target.value)}
-              />
-            </div>
-
-            <div className="col">
-              <label>Certification Level</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_cert_level}
-                onChange={(event) => setUser_Cert_Level(event.target.value)}
-                />
-            </div>
-
-            <div className="col">
-              <label>Availibility</label>
-              <input
-                type="text"
-                className="form-control"
-                value={user_availibility}
-                onChange={(event) => setUser_Availibility(event.target.value)}
-                />
-            </div>
-            
-             <div className='col'>
-                <button>Submit</button>
-             </div>   
+    <div id="diver-form-div" className="my-flex-container">
+      <form id="diver-form" className='createForm my-flex-container profile-container' onSubmit={handleSubmit}>
+          <div className="div-h1">
+            <h1>User Information</h1>
           </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_city} onChange={(event) => setUser_City(event.target.value)} name="city" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">City</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_state} onChange={(event) => setUser_State(event.target.value)} name="state" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">State</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_country} onChange={(event) => setUser_Country(event.target.value)} name="country" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">Country</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_type} onChange={(event) => setUser_Type(event.target.value)} name="accountType" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">Account Type (Personal or Business)</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_cert_agency} onChange={(event) => setUser_Cert_Agency(event.target.value)} name="CertificationAgency" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">Certification Agency</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_cert_level} onChange={(event) => setUser_Cert_Level(event.target.value)} name="CertificationLevel" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">Certification Level</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" value={user_availibility} onChange={(event) => setUser_Availibility(event.target.value)} name="CertificationLevel" id="floatingInput" placeholder="name@example.com"/>
+            <label for="floatingInput">Availibility (True or False)</label>
+          </div>
+          
       </form>
-    
+      <div className='center-child'>
+        <button onClick={handleSubmit} className="myButton">Submit</button>
+      </div> 
+    </div>
         
 
   );

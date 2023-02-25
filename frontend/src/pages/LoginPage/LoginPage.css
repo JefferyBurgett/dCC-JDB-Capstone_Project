@@ -1,3 +1,25 @@
 .error {
   color: red;
 }
+
+#login-page{
+  background-color:black;
+  border:1px solid white;
+  border-radius:5px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  color:white;
+  padding:10px;
+  min-width:350px;
+  margin-top:10px;
+}
+
+#login-page input{
+  background-color:transparent;
+  color:white;
+}
+
+#login-button-div{
+  margin-top:10px;
+}

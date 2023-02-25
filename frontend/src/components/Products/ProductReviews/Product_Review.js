@@ -29,13 +29,9 @@ const Product_Reviews = (props) => {
      
 
     return (
-        <div>
-          <div className="review-container">
-            <div className="ds-review-modal"></div>
-            <ProductReviewModal getProductReviews={displayPDReviews} />
-            <ProductReviews product_reviews={product_reviews} setPD_Reviews={setPD_Reviews} />
-        </div>
-        </div>
+        <div className="review-container my-flex-container">
+          <ProductReviews displayPDReviews={displayPDReviews} product_reviews={product_reviews} setPD_Reviews={setPD_Reviews} />
+      </div>
       );
     };
     

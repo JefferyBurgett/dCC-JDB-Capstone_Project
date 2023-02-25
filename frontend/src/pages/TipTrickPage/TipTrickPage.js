@@ -9,9 +9,7 @@ const TipTrickPage = () => {
   const [tiptricks, setTipTricks] = useState([]);
  
   return (
-    <div className="container">
-        <TipTrick setTipTricks={setTipTricks} />    
-    </div>
+      <TipTrick setTipTricks={setTipTricks} />
   );
 };
 

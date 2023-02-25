@@ -1,25 +1,28 @@
 .dive-site{
   margin:5px;
-  border:1px black solid;
+  border:1px rgb(255, 255, 255) solid;
   background-color: black;
   padding:3px;
   border-radius:5px;
-  font-size:1.5rem;
+  font-size:20px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 300px;
+  height: min-content;
 
 }
 
 .divesite-container h1 {
-  text-align: center;
-  justify-content: center;
-  background-color: black;
-  width:100%;
-  color: rgb(255, 255, 255);
-  width: 300px;
-  margin: auto;
+    text-align: center;
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 0px 7px 5px 7px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    height: min-content;
+    font-size: 50px;
+    min-width: 300px;
 }
 
 .diveSite_container h1 {
@@ -39,7 +42,7 @@
   margin:5px 20px 5px 20px;
 }
 
-p {
+#divesite-detail-div p {
   text-align: center;
 }
 

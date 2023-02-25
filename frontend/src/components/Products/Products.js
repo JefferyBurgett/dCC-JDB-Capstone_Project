@@ -27,14 +27,9 @@ const Products = (props) => {
       }
     };
     return (
-      <div>
-        <div className="product-list-container">
-          <div className="product-modal">
-            <ProductModal getAllProducts={fetchProducts} />
-          </div>
-          <div className="product-list">
-            <ProductsList products={products} setProducts={setProducts} />
-          </div>
+      <div className="product-list-container my-flex-container">
+        <div className="product-list">
+          <ProductsList fetchProducts={fetchProducts} products={products} setProducts={setProducts} />
         </div>
       </div>
       );

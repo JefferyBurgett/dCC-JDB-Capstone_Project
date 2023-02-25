@@ -52,7 +52,7 @@ const ProductModal = (props) => {
 
   return (  
       <div className="product-modal">
-        <button onClick={showModal}>Add Product</button>
+        <button className="myButton" onClick={showModal}>Add Product</button>
         <Modal show={isOpen} size="lg" onHide={hideModal}>
           <Modal.Header>
             <Modal.Title>Add New Product</Modal.Title>

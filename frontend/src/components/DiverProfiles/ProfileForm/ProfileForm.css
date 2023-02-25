@@ -1,0 +1,21 @@
+#diver-form{
+    margin-top:10px;
+}
+
+.createForm{
+    padding:10px;
+}
+
+#diver-form-div input{
+    background-color:transparent;
+    color:white;
+}
+
+#diver-form-div .form-floating{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+#diver-form-div button{
+    margin-top:10px;
+}

@@ -6,23 +6,20 @@
     margin: .5rem;
 }
 
-.ds-modal button{
-    background-color:lightblue;
-}
-
 .divesite-container {
+    display: flex;
     background-image: url(https://images8.alphacoders.com/384/thumb-1920-384520.jpg);
     background-position: center;
+    background-size: cover;
+    height: 100vh;
     padding: 2%;
     width: 100%;
-    overflow: auto;
     text-align: center;
     justify-content: center;
-    vertical-align: middle;
-    border:1px black solid;
+    border: 1px black solid;
     border-radius: 2%;
-    display:flex inline;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .divesite-container li{

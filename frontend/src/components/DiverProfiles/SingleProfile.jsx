@@ -61,10 +61,14 @@ const SingleProfile = (props) => {
     fetchDiver();
   }
   return (
-    <div className="profile-parent-div">
-      <div className="profile-container">
+      <div className="my-flex-container">
         {diver.length>0 ?
           diver.map((element) => (
+            <div className="my-flex-container">
+            <div className="profile-container">
+            <div className="div-h1">
+              <h1>User Information</h1>
+            </div>
             <p className="profile-p" key={user.id}>
               <p>First Name: {element.user.first_name}</p>
               <p>Last Name: {element.user.last_name}</p>
@@ -78,19 +82,26 @@ const SingleProfile = (props) => {
                 Available to Dive:{" "}
                 {element.user_availibility ? "Available" : "Not Availalbe"}
               </p>
-                <button className="button" onClick={setUnavailable}>
-                Not Available
-                </button>
-                <button className="button" onClick={setAvailable}>
-                Available
-                </button>
+
             </p>
+            </div>
+              <div id="profile-button-div" className="center-child">
+                <button className="myButton" onClick={setUnavailable}>
+                  Not Available
+                </button>
+                <button className="myButton" onClick={setAvailable}>
+                  Available
+                </button>
+              </div>
+            </div>
           ))
-          : <ProfileForm setDiver={setDiver} />
+          : <div className="my-flex-container">
+              <div className="profile">
+                <ProfileForm setDiver={setDiver} />
+              </div>
+            </div>
         }
       </div>
-      
-    </div>
   );
 };
 

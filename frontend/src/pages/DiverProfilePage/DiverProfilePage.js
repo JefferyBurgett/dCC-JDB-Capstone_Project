@@ -30,10 +30,7 @@ const DiverProfilePage = () => {
     fetchDiver();
   }, [token]);
   return (
-
-    <div>
-        <SingleProfile userId={userId} setDiver={setDiver} />
-    </div>
+      <SingleProfile userId={userId} setDiver={setDiver} />
   );
 };
 

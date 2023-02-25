@@ -7,22 +7,23 @@
     }
     
 .product-container {
-    margin: 0 auto;
-    padding: 2%;
-    max-width: 500px;
-    overflow: auto;
-    text-align: center;
-    justify-content: center;
-    vertical-align: middle;
-    background-color: lightgrey;
-    border-radius: 2%;
+    margin-top:10px;
 }
 
 .product-list {
+    background-image: url(https://jettydive.com.au/wp-content/uploads/2019/12/Regs-and-BCD-shutterstock_381850690.jpg);
+    background-size: cover;
+    background-position: center;
     justify-content: center;
     text-align: center;
+    height: 100vh;
+    background-image: ;
     
 }
 h1 {
     color: white;
+}
+
+.product-list{
+    width:100%;
 }

@@ -1,42 +1,27 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import React from "react";
 import useAuth from "../../hooks/useAuth";
 import "./DiveSiteReview.css";
 
 
 const DiveSiteReviewList = (props) => {
   const [user, token] = useAuth();
-  // const { siteId } = useParams();
-  // const [ds_reviews, setDS_Reviews] = useState([]);
-
-  // useEffect(() => {
-  //   displayReviews();
-  // }, [props.siteId]);
-
-  // async function displayReviews() {
-  //   try {
-  //   let response = await axios.get(
-  //     `http://127.0.0.1:8000/api/ds_review/${siteId}/`, {
-  //       headers: {
-  //         Authorization: "Bearer " + token,
-  //     }});
-  //       setDS_Reviews(response.data);
-  //       } catch (error) {
-  //           console.log(error.response.data);
-  //       } 
-  //     };
+  
  
 return (
-  <div className="container">
+  <div id="dive-site-review-container" className="container">
+    <div className="div-h1">
    <h1>Reviews</h1>
+   </div>
      {props.ds_reviews &&
      props.ds_reviews.map((ds_review) => {
       return (
-       <div className="review-div" key={ds_review.dive_site_id}>
-        <p className="review-date">{ds_review.user.username} </p>
-        <p>{ds_review.review_text} </p>
-       </div>     
+        <div className="review-parent">
+          <div className="review-div" key={ds_review.dive_site_id}>
+            <p className="review-date">{ds_review.user.username} </p>
+            <span className="seperator"> : </span>
+            <p>{ds_review.review_text} </p>
+          </div>  
+       </div>   
      );
     })}
   </div>

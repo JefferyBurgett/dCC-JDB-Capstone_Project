@@ -27,16 +27,7 @@ const TipTricks = (props) => {
     };
 
     return (
-        <div>
-            <div className="tip-trick-container">
-                <div className="tip-trick-modal">
-                    <TipTrickModal getAllTipTricks={fetchTip_Tricks} />
-                </div>
-                <div>
-                    <TipTrickList tip_tricks={tip_tricks} setTip_Tricks={setTip_Tricks} />
-                </div>
-            </div>
-        </div>    
+            <TipTrickList fetchTip_Tricks={fetchTip_Tricks} tip_tricks={tip_tricks} setTip_Tricks={setTip_Tricks} />
       );
     };
     

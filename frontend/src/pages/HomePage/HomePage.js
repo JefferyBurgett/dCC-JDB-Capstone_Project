@@ -1,9 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
-
-import axios from "axios";
+import "./HomePage.css"
 
 const HomePage = () => {
   const [user, token] = useAuth();
@@ -13,12 +11,18 @@ const HomePage = () => {
 
 
   return (
-    <div className="container">
-      <h1>Welcome To DiverConnect!</h1>
-      <p>
+    <div className="home-container">
+      <div className="home-h1">
+      <h1>Welcome To DIVERconnect!</h1>
+      </div>
+      <div className="div-home-body">
+        <p className="home-body">
         A new resource for the diving community to connect with fellow Divers, potential Dive Buddies as well as share information on everything diving!!
-      </p>
-      <Link to="/register">Click to register!</Link>
+        </p>
+      </div>
+      <div className="home-link">
+        <Link className="myButton" to="/register">Click to register!</Link>
+      </div>
     </div>
   );
 };

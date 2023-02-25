@@ -31,8 +31,8 @@ const SiteReviews = (props) => {
         <div id="review-container">
           <div className="review-container">
             <div className="ds-review-modal"></div>
-            <DiveSiteReviewModal getAllReviews={displayReviews} />
             <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
+            <DiveSiteReviewModal getAllReviews={displayReviews} />
           </div>
         </div>
       );

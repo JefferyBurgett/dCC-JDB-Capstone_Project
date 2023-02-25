@@ -1,4 +1,4 @@
-import DiveSiteModal from "./DiveSiteModal/DiveSiteModal";
+// import DiveSiteModal from "./DiveSiteModal/DiveSiteModal";
 import DiveSitesList from "./DiveSitesList/DiveSitesList";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -28,8 +28,7 @@ const DiveSites = (props) => {
 
     return (
         <div>
-          <DiveSiteModal getDiveSiteReviews={fetchDive_Sites} />
-          <DiveSitesList dive_sites={dive_sites} setDive_Sites={setDive_Sites} />
+          <DiveSitesList dive_sites={dive_sites} setDive_Sites={setDive_Sites} fetchDive_Sites={fetchDive_Sites} />
         </div>
       );
     };

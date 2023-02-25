@@ -19,32 +19,26 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
+    <div className="my-flex-container">
+      <form id="login-page" className="form" onSubmit={handleSubmit}>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.username} onChange={handleInputChange} name="username" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.password} onChange={handleInputChange} name="password" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Password</label>
+      </div>
+
         {isServerError ? (
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
         <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        
       </form>
+      <div id="login-button-div" className="center-child">
+        <button onClick={handleSubmit} className="myButton">Login!</button>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+#logo {
+  font-size: 45px;
+}
+
 body {
   margin: 0;
 }
@@ -38,6 +42,8 @@ body {
   justify-content: space-between;
   width:100%;
   color: rgb(255, 255, 255);
+  align-content: center;
+  align-items: center;
 }
 .brand {
   cursor: pointer;
@@ -61,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   padding: .25rem;
-  font-size: 1.5rem;
+  font-size: 20px;
 }
 
 .nav a:hover {
@@ -85,26 +91,16 @@ body {
   align-items: center;
   padding-left: .5rem;
 }
-  /* padding: 0.4rem 0.5rem;
 
 
-/* .navBar {
-  
-  background-position: center;
-  box-shadow: 4px 2px 5px gray;
- 
-  margin-bottom: 1rem;
-  padding: 1.0rem 2rem;
-  height: 200px;
-  text-align: center;
-  vertical-align: middle;
+.nav li{
+  background-color:black;
+  border: 2px white solid;
+  border-radius:5px;
+  padding:0;
+  height:min-content;
 }
 
-
-
-
-
-
-/* b {
-  color: white;
-} */ 
+#logo-div{
+  border:none;
+}

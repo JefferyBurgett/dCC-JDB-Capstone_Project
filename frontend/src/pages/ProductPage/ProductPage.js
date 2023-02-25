@@ -11,10 +11,7 @@ const ProductPage = () => {
   const [products, setProducts] = useState([]);
   
   return (
-    <div>
-        
-        <Products setProducts={setProducts} />
-    </div>
+      <Products setProducts={setProducts} />
   );
 };
 

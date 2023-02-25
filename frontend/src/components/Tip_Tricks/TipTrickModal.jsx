@@ -44,7 +44,7 @@ const TipTrickModal = (props) => {
 
   return (
     <div>
-    <button onClick={showModal}>Add Tip or Trick</button>
+    <button className="myButton" onClick={showModal}>Add Tip or Trick</button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>
             <Modal.Title>Tip Trick</Modal.Title>
@@ -54,7 +54,7 @@ const TipTrickModal = (props) => {
                     <div className="row">
                         <div className="col">
                             <div>
-                            <label>Dive Site Review</label>
+                            <label>Tips & Tricks</label>
                             <input
                                 type="text"
                                 className="form-control"

@@ -26,8 +26,8 @@ const Navbar = () => {
     <nav className="nav">
       <row className="nav-row">
         <ul>
-          <li className="brand">
-          <a class="brand nav-link" href="/">DiverConnect</a>
+          <li id="logo-div" className="brand">
+            <a id="logo" class="brand nav-link" href="/">DIVERconnect</a>
           </li>
           <li>
             <a class="nav-item-nb nav-link" href="/diverslist">Divers Directory</a>

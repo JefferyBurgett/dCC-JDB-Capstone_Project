@@ -2,8 +2,6 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-// import DiveSiteReviewModal from "../../components/SiteReviews/DiveSiteReviews/DiveSIteReviewModal/DiveSiteReviewModal";
-// import DiveSiteReviewList from "../../components/DiveSites/DiveSiteReviews/DiveSiteReviewList";
 import Google_DSMap from "../../components/GoogleMap/GoogleDSMap";
 import "./DiveSiteDetailPage.css"
 import SiteReviews from "../../components/DiveSiteReviews/SiteReviews";

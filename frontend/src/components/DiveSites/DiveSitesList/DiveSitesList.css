@@ -1,16 +1,8 @@
-.dive-site{
-    margin:5px;
-    margin-left: 30%;
-    border:1px black solid;
-    background-color: black;
-    padding:3px;
-    border-radius:5px;
-    font-size:1.5rem;
+.dive-site-parent {
     display: flex;
-    align-items: center;
+    width: 100%;
+    height: min-content;
     justify-content: center;
-    width: 300px;
-
 }
 
 .dive-site a {

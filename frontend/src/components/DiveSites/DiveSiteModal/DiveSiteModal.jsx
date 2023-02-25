@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,6 +16,7 @@ const DiveSiteModal = (props) => {
     setIsOpen(false);
   };
 
+   
   const [user, token] = useAuth();
   const [site_name, setSite_Name] = useState();
   const [site_city, setSite_City] = useState();
@@ -46,7 +48,7 @@ const DiveSiteModal = (props) => {
       setSite_Lat("");
       setSite_Lng("");
       hideModal();
-      props.getAllDiveSites();
+      props.fetchDive_Sites();
     } catch (error) {
       console.log(error.message);
     }
@@ -54,7 +56,7 @@ const DiveSiteModal = (props) => {
 
   return (
     <div className="ds-modal">
-      <button onClick={showModal}>Add Dive Site</button>
+      <button className="myButton" onClick={showModal}>Add Dive Site</button>
       <Modal show={isOpen} size="xl" onHide={hideModal}>
         <Modal.Header>
           <Modal.Title>

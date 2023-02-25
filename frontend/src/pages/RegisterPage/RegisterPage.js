@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
+import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const { registerUser } = useContext(AuthContext);
@@ -17,59 +18,38 @@ const RegisterPage = () => {
   );
 
   return (
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          First Name:{" "}
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Last Name:{" "}
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
+    <div id="reigster-page" className="container my-flex-container">
+      <form id="register-form" className="form" onSubmit={handleSubmit}>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.username} onChange={handleInputChange} name="username" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.email} onChange={handleInputChange} name="email" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.firstName} onChange={handleInputChange} name="firstName" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">First Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.lastName} onChange={handleInputChange} name="lastName" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Last Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" value={formData.password} onChange={handleInputChange} name="password" id="floatingInput" placeholder="name@example.com"/>
+        <label for="floatingInput">Password</label>
+      </div>
+
         <p style={{ fontSize: "12px" }}>
           NOTE: Make this an uncommon password with characters, numbers, and
           special characters!
         </p>
-        <button>Register!</button>
+        
       </form>
+      <div id="register-button-div" className="center-child">
+        <button onClick={handleSubmit} className="myButton">Register!</button>
+      </div>
     </div>
   );
 };

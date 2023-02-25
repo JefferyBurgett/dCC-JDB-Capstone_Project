@@ -47,7 +47,7 @@ const DiveSiteReviewModal = (props) => {
 
   return (
     <div id="modal-div">
-    <button onClick={showModal}>Add Review</button>
+    <button className="myButton" onClick={showModal}>Add Review</button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>
             <Modal.Title>Add Dive Site Review</Modal.Title>

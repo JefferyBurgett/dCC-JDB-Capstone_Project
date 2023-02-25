@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useAuth from "../../hooks/useAuth";
+import TipTrickModal from "./TipTrickModal";
+import "./TipTrickList.css";
 
 
 const TipTrickList = (props) => {
@@ -7,16 +9,23 @@ const TipTrickList = (props) => {
   
  
 return (
-  <div className="container">
-   <h1>Tips & Tricks</h1>
+  <div id="tip-trick-div" className="container my-flex-container">
+    <div className="center-child">
+      <h1 className="black-box-h1">Tips & Tricks</h1>
+    </div>
      {props.tip_tricks &&
      props.tip_tricks.map((tip_trick) => {
       return (
-       <li key={tip_trick.id}>
-        {user.username}, {tip_trick.tt_text}
-       </li>     
+        <div className="center-child">
+          <div className="black-box" key={tip_trick.id}>
+            {user.username}
+            <span className="seperator">:</span>
+            {tip_trick.tt_text}
+          </div>    
+        </div> 
      );
       })}
+      <TipTrickModal getAllTipTricks={props.fetchTip_Tricks} />
   </div>
  );
 };
