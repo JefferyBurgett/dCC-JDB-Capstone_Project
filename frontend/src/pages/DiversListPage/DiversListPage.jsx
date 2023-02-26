@@ -48,6 +48,7 @@ const DiversListPage = (props) => {
                       <th>Account Type:</th>      
                       <th>Certifaction Agency:</th>
                       <th>Certifaction Level:</th>
+                      <th>Email Address:</th>
                       <th>Available to Dive:</th>
                   </tr>
               </thead>
@@ -65,6 +66,7 @@ const DiversListPage = (props) => {
                 <td>{element.user_type}</td>      
                 <td>{element.user_cert_agency}</td>
                 <td>{element.user_cert_level}</td>
+                <td>{element.user.email}</td>
                 <td>{element.user_availibility ? "Available" : "Not Availalbe"}</td>       
               </tr>
               ) 

@@ -22,7 +22,7 @@ const DiveSiteReviewModal = (props) => {
     const [review_text, setReview_Text] = useState();
     const [dive_site_id, setDive_Site_Id] = useState();
  
-               
+        
     async function handleSubmit(event) {
         try { 
             event.preventDefault();
@@ -44,6 +44,7 @@ const DiveSiteReviewModal = (props) => {
               console.log(error.message);
             }
             };
+
 
   return (
     <div id="modal-div">
@@ -70,7 +71,7 @@ const DiveSiteReviewModal = (props) => {
                 </form>
             </Modal.Body>
           <Modal.Footer>
-            <button onClick={hideModal}>Cancel</button>
+            <button onClick={hideModal} type="submit">Cancel</button>
             <button onClick={handleSubmit} type="submit">Submit</button>
           </Modal.Footer>
         </Modal>

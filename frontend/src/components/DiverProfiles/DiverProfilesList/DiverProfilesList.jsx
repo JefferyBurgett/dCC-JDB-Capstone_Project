@@ -38,6 +38,7 @@ const DiverProfileList = (props) => {
         <p>Account Type: {element.user_type}</p>      
         <p>Certifaction Agency: {element.user_cert_agency}</p>
         <p>Certifaction Level: {element.user_cert_level}</p>
+        <p>Email Address: {element.user.email}</p>
         <p>Available to Dive: {element.user_availibility ? "Available" : "Not Availalbe"}</p>       
         </p>
       ))}

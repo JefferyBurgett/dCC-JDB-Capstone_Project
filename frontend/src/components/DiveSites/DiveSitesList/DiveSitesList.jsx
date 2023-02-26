@@ -1,7 +1,7 @@
 import React from "react";
 import DiveSiteModal from "../DiveSiteModal/DiveSiteModal";
 import useAuth from "../../../hooks/useAuth";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./DiveSitesList.css"
 
 

@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 const ProductList = (props) => {
 
   const [user, token] = useAuth();
-
-  
+ 
 
   return (
         <div className="product-container my-flex-container">

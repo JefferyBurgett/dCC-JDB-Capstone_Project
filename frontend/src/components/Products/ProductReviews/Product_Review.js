@@ -5,6 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import ProductReviews from "./ProductReviews";
 import ProductReviewModal from "./ProductReviewModal";
 
+
 const Product_Reviews = (props) => {
     const { productId } = useParams();
     const [user, token] = useAuth();
@@ -15,22 +16,27 @@ const Product_Reviews = (props) => {
       }, [props.productId]);
     
       const displayPDReviews = async () => {
+        console.log("productId:" + productId);
         try {
         let response = await axios.get(
           `http://127.0.0.1:8000/api/product_review/${productId}/`, {
             headers: {
               Authorization: "Bearer " + token,
           }});
+          console.log("responoseData:" + response.data)
             setPD_Reviews(response.data);
+            console.log("productreviews:" + product_reviews);
             } catch (error) {
                 console.log(error.response.data);
             } 
+
           };
      
 
     return (
         <div className="review-container my-flex-container">
-          <ProductReviews displayPDReviews={displayPDReviews} product_reviews={product_reviews} setPD_Reviews={setPD_Reviews} />
+          <ProductReviews product_reviews={product_reviews} setPD_Reviews={setPD_Reviews} />
+          <ProductReviewModal getProductReviews={displayPDReviews} />
       </div>
       );
     };

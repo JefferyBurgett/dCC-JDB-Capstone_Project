@@ -105,18 +105,12 @@ const ProductModal = (props) => {
             </form>
                 </Modal.Body>
           <Modal.Footer>
-            <button onClick={hideModal}>Cancel</button>
-            <button onClick={handleSubmit} type="submit">Submit</button>
+            <button className="myButton" onClick={hideModal}>Cancel</button>
+            <button className="myButton" onClick={handleSubmit} type="submit">Submit</button>
           </Modal.Footer>
         </Modal>
       </div>
     );
   };
-    
- 
-
-
-
-
 
 export default ProductModal;

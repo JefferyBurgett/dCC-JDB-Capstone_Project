@@ -1,4 +1,3 @@
-// import DiveSiteModal from "./DiveSiteModal/DiveSiteModal";
 import DiveSitesList from "./DiveSitesList/DiveSitesList";
 import { useState, useEffect } from "react";
 import axios from "axios";

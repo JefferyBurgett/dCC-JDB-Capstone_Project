@@ -1,10 +1,8 @@
 import React, { useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./ProductDetailPage.css";
 import useAuth from "../../hooks/useAuth";
-import ProductReviews from "../../components/Products/ProductReviews/ProductReviews";
-import ProductReviewModal from "../../components/Products/ProductReviews/ProductReviewModal";
 import Product_Reviews from "../../components/Products/ProductReviews/Product_Review";
 
 const ProductDetailPage = () => {
@@ -57,7 +55,6 @@ const ProductDetailPage = () => {
 
             <div className="my-flex-container">
                 <Product_Reviews setPD_Reviews={setPD_Reviews} />
-                {/* <ProductReviewModal setPD_Reviews={setPD_Reviews} /> */}
             </div>
         </div>
     );

@@ -4,5 +4,5 @@ from .models import Tip_Trick
 class Tip_TrickSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tip_Trick
-        fields = ['user_id','tt_text']
+        fields = ['user','user_id','tt_text']
         depth = 1

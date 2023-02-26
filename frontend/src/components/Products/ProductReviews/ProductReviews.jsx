@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import React from "react";
 import useAuth from "../../../hooks/useAuth";
-import ProductReviewModal from "./ProductReviewModal";
 
 
 const ProductReviews = (props) => {
@@ -18,14 +15,13 @@ return (
       return (
         <div className="center-child">
           <div className="black-box" key={product_review.product_id}>
-            {user.username}
-            <span className="seperator">:</span>
+            {product_review.user.username}
+            <span className="seperator"> : </span>
             {product_review.pd_review_text}
           </div>   
        </div>  
      );
     })}
-    <ProductReviewModal getProductReviews={props.displayPDReviews} />
   </div>
  );
 };

@@ -43,8 +43,6 @@ const DiveSiteDetailPage = () => {
         </div>
           <Google_DSMap lat={dive_site[0]?.site_lat} lng={dive_site[0]?.site_lng} />
           <SiteReviews setDS_Reviews ={setDS_Reviews} />
-          {/* <DiveSiteReviewList ds_reviews={ds_reviews} setDS_Reviews={setDS_Reviews} />
-          <DiveSiteReviewModal setDS_Reviews={setDS_Reviews} getDiveSiteReviews={displayReviews}/> */}
       </div>
     );
 };

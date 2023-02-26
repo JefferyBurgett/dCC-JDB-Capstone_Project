@@ -4,24 +4,11 @@ import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 
-// function Nav_Bar(props) {
-//   const isLoggedIn = props.isLoggedIn;
-//   if (isLoggedIn) {
-//     return <LoggedInNav/>;
-//   }
-//   return <LoggedOutNav/>;
-// }
-
-// export default Nav_Bar;
-
-
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-
-
-  
+ 
   return (
     <nav className="nav">
       <row className="nav-row">
@@ -51,7 +38,7 @@ const Navbar = () => {
             {user ? (
               <button className="nav-button" onClick={logoutUser}>Logout</button>
             ) : (
-              <button onClick={() => navigate("/login")}>Login</button>
+              <button className="myButton" onClick={() => navigate("/login")}>Login</button>
             )}
           </li>
         </ul>

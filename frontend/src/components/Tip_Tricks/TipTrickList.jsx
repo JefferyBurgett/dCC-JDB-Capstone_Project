@@ -18,7 +18,7 @@ return (
       return (
         <div className="center-child">
           <div className="black-box" key={tip_trick.id}>
-            {user.username}
+            {tip_trick.user.username}
             <span className="seperator">:</span>
             {tip_trick.tt_text}
           </div>    

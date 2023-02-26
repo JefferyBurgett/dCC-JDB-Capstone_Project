@@ -21,6 +21,7 @@ const SiteReviews = (props) => {
               Authorization: "Bearer " + token,
           }});
             setDS_Reviews(response.data);
+            console.log(ds_reviews);
             } catch (error) {
                 console.log(error.response.data);
             } 

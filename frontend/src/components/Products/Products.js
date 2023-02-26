@@ -1,4 +1,3 @@
-import ProductModal from "./ProductModal/ProductModal";
 import ProductsList from "./ProductsList/ProductsList";
 import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";

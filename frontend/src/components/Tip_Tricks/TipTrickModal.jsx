@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -67,8 +66,8 @@ const TipTrickModal = (props) => {
                 </form>
             </Modal.Body>
           <Modal.Footer>
-            <button onClick={hideModal}>Cancel</button>
-            <button onClick={handleSubmit} type="submit">Submit</button>
+            <button className="myButton" onClick={hideModal}>Cancel</button>
+            <button className="myButton" onClick={handleSubmit} type="submit">Submit</button>
           </Modal.Footer>
         </Modal>
       </div>
